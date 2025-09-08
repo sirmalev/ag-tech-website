@@ -7,9 +7,7 @@ Source code for the official website of AG Technology, a company specializing in
 <br/>
 
 <!-- Replace [YOUR_USERNAME]/[YOUR_REPOSITORY] with your GitHub username and repository name -->
-![GitHub issues](https://img.shields.io/github/issues/sirmalev/ag-tech-website/?style=for-the-badge&color=brightgreen)
-![GitHub forks](https://img.shields.io/github/forks/sirmalev/ag-tech-website/?style=for-the-badge&color=blue)
-![GitHub stars](https://img.shields.io/github/stars/sirmalev/ag-tech-website/?style=for-the-badge&color=yellow)
+![GitHub issues](https://img.shields.io/github/issues/sirmalev/ag-tech-website?style=for-the-badge&color=brightgreen)![GitHub forks](https://img.shields.io/github/forks/sirmalev/ag-tech-website?style=for-the-badge&color=blue)![GitHub stars](https://img.shields.io/github/stars/sirmalev/ag-tech-website?style=for-the-badge&color=yellow)
 
 </div>
 
