@@ -109,6 +109,8 @@ To run this project locally, you will need Node.js and a Firebase project.
 ---
 
 ## 📫 Contact
-Alon Malev - LinkedIn - sir.alonmalev@gmail.com
 
-Project Link: [https://github.com/sirmalev/ag-tech-website/](https://github.com/sirmalev/ag-tech-website/)
+
+<a href="https://il.linkedin.com/in/alon-malev" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+
+<a href="mailto:sir.alonmalev@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
