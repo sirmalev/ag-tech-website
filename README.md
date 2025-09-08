@@ -1,15 +1,15 @@
 <div align="center">
   
-# BGRS Protocol Server 🚀
+# AG Technology - Company Website & Blog 🚀
 
-A high-performance, concurrent server implementation for a course registration system protocol (BGRS), developed as part of the Systems Programming Laboratory (SPL) course. The project demonstrates two concurrency models: Thread-Per-Client and the Reactor design pattern.
+Source code for the official website of AG Technology, a company specializing in automation and AI solutions for businesses. The site serves as a marketing tool, contact point, and content platform.
 
 <br/>
 
-<!-- Replace [YOUR_USERNAME]/[YOUR_REPOSITORY] with your actual GitHub user and repo name -->
-![GitHub issues](https://img.shields.io/github/issues/[YOUR_USERNAME]/[YOUR_REPOSITORY]?style=for-the-badge&color=brightgreen)
-![GitHub forks](https://img.shields.io/github/forks/[YOUR_USERNAME]/[YOUR_REPOSITORY]?style=for-the-badge&color=blue)
-![GitHub stars](https://img.shields.io/github/stars/[YOUR_USERNAME]/[YOUR_REPOSITORY]?style=for-the-badge&color=yellow)
+<!-- Replace [YOUR_USERNAME]/[YOUR_REPOSITORY] with your GitHub username and repository name -->
+![GitHub issues](https://img.shields.io/github/issues/sirmalev/ag-tech-website/?style=for-the-badge&color=brightgreen)
+![GitHub forks](https://img.shields.io/github/forks/sirmalev/ag-tech-website/?style=for-the-badge&color=blue)
+![GitHub stars](https://img.shields.io/github/stars/sirmalev/ag-tech-website/?style=for-the-badge&color=yellow)
 
 </div>
 
@@ -19,115 +19,96 @@ A high-performance, concurrent server implementation for a course registration s
   <a href="#-overview">Overview</a> •
   <a href="#-key-features">Key Features</a> •
   <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-setup--installation">Setup</a> •
-  <a href="#-protocol-specification">Protocol Specification</a> •
+  <a href="#-setup--installation">Setup & Installation</a> •
   <a href="#-contact">Contact</a>
 </p>
 
 ---
 
 ## 📖 Overview
-This project provides a robust server framework in Java capable of handling multiple clients concurrently. It includes a specific implementation for the **BGRS (BGU Registration System)** protocol, a custom application-level protocol for managing university course registrations.
+This project is the website for AG Technology. It includes:
+- **Frontend:** A responsive static site built with HTML, CSS, and vanilla JavaScript.
+- **Backend:** A Node.js server using the Firebase Admin SDK to connect to a Firestore database. The server is responsible for receiving and saving submissions from the contact form.
 
-The server is designed to be generic and can operate in two different modes:
-1.  **Thread-Per-Client (TPC):** A new thread handles each client.
-2.  **Reactor:** A single-threaded, event-driven model for high-efficiency I/O.
+The site showcases the company's services, including an interactive savings calculator, and features a blog with professional articles.
 
 ---
 
 ## ✨ Key Features
-*   **Dual Concurrency Models:** Choose between a Thread-Per-Client (TPC) model for simplicity or a high-performance, non-blocking Reactor pattern for scalability.
-*   **Generic & Extensible Design:** The server is decoupled from the protocol logic using interfaces (`BidiMessagingProtocol`, `MessageEncoderDecoder`), making it easy to implement new protocols.
-*   **Custom Protocol Implementation:** A complete implementation of the BGRS protocol, handling user registration, login, course management, and status checks.
-*   **Robust Message Handling:** A custom encoder-decoder handles the serialization and deserialization of network messages based on the BGRS protocol specification.
+*   **Responsive Company Website:** Showcases company services, work process, and value proposition.
+*   **Blog System:** Articles are managed as JavaScript modules, allowing for easy content addition and management.
+*   **Savings Calculator (ROI):** An interactive tool for potential clients to estimate savings from automation.
+*   **Contact Form:** A functional form that sends data to the backend and stores it securely in Firestore.
+*   **Cookie Consent Management:** A banner for managing cookie consent according to regulations.
 
 ---
 
 ## 🛠️ Tech Stack
 This project was built using the following technologies:
 
-!Java
-!Maven
-!Git
+**Frontend:**
+- HTML5
+- CSS3
+- JavaScript (ES6+)
 
----
-
-## 🏗️ Architecture
-The application follows a client-server architecture. The core of the project is a generic server that can be instantiated with different concurrency strategies and protocol implementations.
-
-### Concurrency Models
-*   **`ThreadPerClientServer` (TPC):** A straightforward multi-threaded server where each client connection is handled by a dedicated thread. This model is easier to reason about but can be resource-intensive with a large number of concurrent clients.
-*   **`Reactor`:** An event-driven architecture that uses a single thread to handle I/O for multiple clients. It leverages Java NIO's `Selector` to monitor multiple sockets for incoming data, making it highly scalable and efficient by avoiding the overhead of thread creation and context switching for each client.
-
-### Decoupled Design
-The server logic is completely separated from the application protocol logic. This is achieved by using two main interfaces:
-*   **`MessageEncoderDecoder`:** Responsible for translating between raw byte streams from the network and structured message objects that the protocol can understand.
-*   **`BidiMessagingProtocol`:** Defines the logic for processing incoming messages and generating responses. The server uses an instance of this protocol to handle all application-level communication for a given client.
-
-This design allows the same server framework (`Reactor` or `TPC`) to run any implemented protocol (e.g., Echo, BGRS) without any code changes to the server itself.
+**Backend:**
+- Node.js
+- Firebase Admin SDK
+- Firestore (NoSQL Database)
 
 ---
 
 ## ⚙️ Setup & Installation
-To run this project, you will need Java and Maven installed on your machine.
+To run this project locally, you will need Node.js and a Firebase project.
 
-### Prerequisites
-*   Java (Version 11 or higher)
-*   Apache Maven
+### Prerequisites (Firebase)
+1.  Create a new project in the Firebase Console.
+2.  In your new project, enable the **Firestore Database**.
+3.  In your project settings (`Project settings` -> `Service accounts`), click **"Generate new private key"**. This will download a JSON file. Save it for the next step.
 
-### Installation & Running
+### Local Installation
 1.  **Clone the repository**
     ```bash
-    # Replace with your actual repository URL
+    # Replace with your repository URL
     git clone https://github.com/[YOUR_USERNAME]/[YOUR_REPOSITORY].git
     ```
 2.  **Navigate to the project directory**
     ```bash
-    cd [YOUR_REPOSITORY]
+    cd my-website-project
     ```
-3.  **Compile and package the project using Maven**
+3.  **Install dependencies**
     ```bash
-    mvn clean package
+    npm install
     ```
-4.  **Run the server**
-    The server can be started in either `Reactor` or `TPC` mode. You must provide a port number as a command-line argument.
+4.  **Set up environment variables**
+    a. Create a file named `.env` in the project's root directory.
+    b. Open the JSON file you downloaded from Firebase.
+    c. Convert the entire content of the JSON file into a single Base64 encoded string. You can use an online tool or the following terminal command:
+       ```bash
+       # Replace 'path/to/your/serviceAccountKey.json' with the path to your file
+       cat path/to/your/serviceAccountKey.json | base64
+       ```
+    d. Add the resulting string to your `.env` file like this:
+       ```
+       FIREBASE_SERVICE_ACCOUNT_BASE64="<Your-Base64-String-Here>"
+       ```
 
-    **To run the Reactor server:**
+5.  **Run the server**
+    (Assuming the server entry file is `src/server.js` or similar)
     ```bash
-    java -cp target/spl-net-1.0-SNAPSHOT.jar bgu.spl.net.impl.BGRSServer.ReactorMain 7777
+    node src/server.js 
     ```
+    *The server will run and listen for submissions from the form.*
 
-    **To run the TPC server:**
+6.  **Run the frontend**
+    To view the site, you can use the Live Server extension in VS Code on the `public/index.html` file, or run a simple static server from your terminal:
     ```bash
-    java -cp target/spl-net-1.0-SNAPSHOT.jar bgu.spl.net.impl.BGRSServer.TPCMain 7777
+    npx serve public
     ```
-    *(Replace `7777` with your desired port)*
-
----
-
-## 📜 Protocol Specification
-The server implements the BGRS protocol, which consists of messages sent from the client to the server. The server responds with an `ACK` (Opcode 12) or `ERROR` (Opcode 13) message.
-
-| Opcode | Command        | Sent By | Description                                                              |
-|:-------|:---------------|:--------|:-------------------------------------------------------------------------|
-| 1      | `ADMINREG`     | Anyone  | Register a new admin user.                                               |
-| 2      | `STUDENTREG`   | Anyone  | Register a new student user.                                             |
-| 3      | `LOGIN`        | Anyone  | Log in with a username and password.                                     |
-| 4      | `LOGOUT`       | Logged In | Log out from the system.                                                 |
-| 5      | `COURSEREG`    | Student | Register for a specific course.                                          |
-| 6      | `KDAMCHECK`    | Student | Check the prerequisite courses for a given course.                       |
-| 7      | `COURSESTAT`   | Admin   | Get the status of a course (e.g., registered students, available seats). |
-| 8      | `STUDENTSTAT`  | Admin   | Get the status of a student (e.g., list of registered courses).          |
-| 9      | `ISREGISTERED` | Student | Check if the student is registered for a specific course.                |
-| 10     | `UNREGISTER`   | Student | Unregister from a specific course.                                       |
-| 11     | `MYCOURSES`    | Student | Get a list of all courses the student is currently registered for.       |
 
 ---
 
 ## 📫 Contact
-*Replace with your contact information*
+Alon Malev - LinkedIn - sir.alonmalev@gmail.com
 
-Your Name - LinkedIn - your.email@example.com
-
-Project Link: [https://github.com/[YOUR_USERNAME]/[YOUR_REPOSITORY]](https://github.com/[YOUR_USERNAME]/[YOUR_REPOSITORY])
+Project Link: [https://github.com/sirmalev/ag-tech-website/](https://github.com/sirmalev/ag-tech-website/)
