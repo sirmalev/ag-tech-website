@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         #accessibility-widget {
             position: fixed;
-            top: 81%;
+            bottom: 81%;
             right: 20px;
             transform: translateY(-50%);
             z-index: 9999;
