@@ -70,11 +70,11 @@ To run this project locally, you will need Node.js and a Firebase project.
 1.  **Clone the repository**
     ```bash
     # Replace with your repository URL
-    git clone https://github.com/[YOUR_USERNAME]/[YOUR_REPOSITORY].git
+    git clone https://github.com/sirmalev/ag-tech-website.git
     ```
 2.  **Navigate to the project directory**
     ```bash
-    cd my-website-project
+    cd ag-tech-website
     ```
 3.  **Install dependencies**
     ```bash
@@ -94,9 +94,9 @@ To run this project locally, you will need Node.js and a Firebase project.
        ```
 
 5.  **Run the server**
-    (Assuming the server entry file is `src/server.js` or similar)
+    (Assuming the server entry file is `src/app.js` or similar)
     ```bash
-    node src/server.js 
+    node src/app.js 
     ```
     *The server will run and listen for submissions from the form.*
 
