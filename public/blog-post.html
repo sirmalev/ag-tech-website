@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    {{STRUCTURED_DATA}}
+    {{SOCIAL_TAGS}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+</head>
+<body class="blog-post-page">
+
+    <header>
+        <div class="container navbar">
+            <a href="/index.html" class="logo"><img src="/assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/about.html">אודות</a></li>
+                    <li><a href="/index.html#process">התהליך שלנו</a></li>
+                    <li><a href="/index.html#calculator">מחשבון חיסכון</a></li>
+                    <li><a href="/blog">מאמרים</a></li>
+                    <li><a href="/index.html#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+            <a href="/index.html#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-post-section">
+            <div class="container" id="post-container">
+                <!-- תוכן המאמר מוזרק כאן על ידי השרת -->
+                <article class="blog-post">
+                    <div class="blog-post-header">
+                        <h1 class="blog-post-title">{{POST_TITLE}}</h1>
+                        <div class="blog-post-meta">
+                            <span class="category">{{POST_CATEGORY}}</span>
+                            <span class="author">מאת: {{POST_AUTHOR}}</span>
+                            <span class="date">{{POST_DATE}}</span>
+                        </div>
+                    </div>
+                    <div class="blog-post-image">
+                        <img src="{{POST_IMAGE_SRC}}" alt="{{POST_IMAGE_ALT}}">
+                    </div>
+                    <div class="blog-post-content">
+                        {{POST_CONTENT}}
+                    </div>
+                </article>
+            </div>
+
+            <!-- מאמרים קשורים יוזרקו כאן על ידי השרת -->
+            {{RELATED_POSTS}}
+
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 AG Technology. כל הזכויות שמורות. </p> 
+                <p><a href="/about.html">אודות</a> | <a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- אין צורך ב-blog-post.js יותר, התוכן מגיע מהשרת -->
+    <script src="/main.js"></script>
+    <script src="/accessibility.js"></script>
+    <script type="module" src="/cookie-consent.js"></script>
+
+</body>
+</html>

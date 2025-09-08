@@ -1,0 +1,36 @@
+--- Dependencies ---
+This directory contains all of your project's node packages.
+It can be very large and should always be re-created by running npm install.
+This is the most important line in any Node.js .gitignore file.
+node_modules/
+
+--- Environment Variables ---
+This file contains sensitive information like API keys and database credentials.
+It should NEVER be committed to version control.
+.env
+
+--- Sensitive Configuration Files ---
+Specifically ignore your Firebase service account key file.
+Leaking this file gives full administrative access to your Firebase project.
+serviceAccountKey.json
+--- Log Files ---
+Log files can contain sensitive user data and grow very large.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+--- Operating System Files ---
+These files are generated automatically by your operating system and are not part of the project code.
+.DS_Store
+Thumbs.db
+
+--- Build Output ---
+If you have a build process (e.g., for a frontend framework or TypeScript),
+ignore the output directory.
+/dist
+/build
+
+--- Optional: Editor and IDE Directories ---
+Ignore configuration files from code editors like VS Code.
+.vscode/

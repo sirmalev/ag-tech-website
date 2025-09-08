@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת אבחון 360° לאוטומציה ו-AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="client-details.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+
+
+</head>
+<body class="bg-[#0d1128]">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-12 print-bg-white">
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text">מערכת אבחון 360°</h1>
+            <p class="text-lg text-gray-300 mt-2 print-text-black">אפיון אסטרטגי לאוטומציה ובינה מלאכותית</p>
+        </header>
+        
+        <!-- Client Details -->
+        <div class="bg-[#1a1f3c] p-6 rounded-2xl mb-8 border border-[#2a305a] print-bg-white print-border-gray">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div>
+                    <label for="businessName" class="block text-sm font-semibold text-gray-300 mb-2 print-text-black">שם העסק</label>
+                    <input type="text" id="businessName" class="form-input print-border-gray print-text-black" placeholder="לדוגמה: ישראלי שיווק בע״מ">
+                </div>
+                <div>
+                    <label for="contactName" class="block text-sm font-semibold text-gray-300 mb-2 print-text-black">שם איש הקשר</label>
+                    <input type="text" id="contactName" class="form-input print-border-gray print-text-black" placeholder="ישראל ישראלי">
+                </div>
+                <div>
+                    <label for="phoneNumber" class="block text-sm font-semibold text-gray-300 mb-2 print-text-black">מספר טלפון</label>
+                    <input type="text" id="phoneNumber" class="form-input print-border-gray print-text-black" placeholder="050-1234567">
+                </div>
+                <div>
+                    <label for="emailContact" class="block text-sm font-semibold text-gray-300 mb-2 print-text-black">אימייל איש הקשר</label>
+                    <input type="email" id="emailContact" class="form-input print-border-gray print-text-black" placeholder="example@example.com">
+                </div>
+                <div>
+                    <label for="businessField" class="block text-sm font-semibold text-gray-300 mb-2 print-text-black">תחום פעילות</label>
+                    <input type="text" id="businessField" class="form-input print-border-gray print-text-black" placeholder="שיווק דיגיטלי / נדל״ן / איקומרס">
+                </div>
+                <div>
+                    <label for="assessmentDate" class="block text-sm font-semibold text-gray-300 mb-2 print-text-black">תאריך</label>
+                    <input type="date" id="assessmentDate" class="form-input print-border-gray print-text-black">
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-[#1a1f3c] rounded-full h-2.5 mb-10 no-print">
+            <div id="progressBar" class="bg-gradient-to-r from-[#5D5FEF] to-[#8D5FF1] h-2.5 rounded-full progress-bar-inner" style="width: 0%"></div>
+        </div>
+
+        <!-- Accordion Sections -->
+        <div class="space-y-4" id="assessmentForm">
+            
+            <!-- Section 1: Business & Goals -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <h2 class="text-xl font-bold print-text-black">1. הבנת העסק והיעדים</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">מהם 3 היעדים העסקיים המרכזיים לשנה הקרובה?</label>
+                            <textarea id="businessGoals" class="form-textarea print-border-gray print-text-black" rows="3" placeholder="1. הגדלת הכנסות ב-X%&#10;2. הורדת עלויות תפעול ב-Y%&#10;3. שיפור שביעות רצון לקוחות"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">מהו צוואר הבקבוק הגדול ביותר שעוצר את העסק מלצמוח כרגע?</label>
+                            <textarea id="businessBottleneck" class="form-textarea print-border-gray print-text-black" rows="2" placeholder="לדוגמה: תהליך מכירה ארוך ומסורבל, שירות לקוחות איטי, חוסר בנתונים לקבלת החלטות..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW Section 2: KPIs -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 1.5v3m0 15v3m-4.5-4.5l2.12-2.12M6.38 6.38l2.12 2.12M17.62 6.38l-2.12 2.12M17.62 17.62l-2.12-2.12" /></svg>
+                        <h2 class="text-xl font-bold print-text-black">2. מדדים פיננסיים ו-KPIs</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">מהי עלות גיוס לקוח ממוצעת (CAC)?</label>
+                            <input type="text" id="kpiCac" class="form-input print-border-gray print-text-black" placeholder="אם לא ידוע, יש לציין איך מחשבים זאת כיום.">
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">מהו ערך חיי לקוח (LTV) מוערך, ועל פני איזו תקופה?</label>
+                            <input type="text" id="kpiLtv" class="form-input print-border-gray print-text-black" placeholder="לדוגמה: 5,000 ש״ח על פני 3 שנים">
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">מהו ה-KPI החשוב ביותר שההנהלה בוחנת מדי שבוע?</label>
+                            <input type="text" id="kpiMostImportant" class="form-input print-border-gray print-text-black" placeholder="לדוגמה: מספר לידים חדשים, יחס המרה, הכנסה שבועית...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW Section 3: Human Factor -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.964A3 3 0 006 12v-1.5a3 3 0 013-3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <h2 class="text-xl font-bold print-text-black">3. הגורם האנושי ותהליכים נסתרים</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">תארו "קומבינה" או "קיצור דרך" שעובדים משתמשים בו כדי לעקוף תהליך רשמי.</label>
+                            <textarea id="humanFactorShortcut" class="form-textarea print-border-gray print-text-black" rows="2" placeholder="זהו מכרה זהב לזיהוי כשלים אמיתיים בתהליך..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">איזו משימה גורמת הכי הרבה תסכול או "כאב ראש" לעובדים ביום-יום?</label>
+                            <textarea id="humanFactorFrustration" class="form-textarea print-border-gray print-text-black" rows="2" placeholder="אוטומציה של משימות שנואות מעלה פרודוקטיביות ומורל."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW Section 4: Data -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" /></svg>
+                        <h2 class="text-xl font-bold print-text-black">4. תשתיות דאטה וזרימת מידע</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">היכן נשמר המידע הקריטי על הלקוחות? האם זהו "מקור האמת" היחיד?</label>
+                            <input type="text" id="dataStorage" class="form-input print-border-gray print-text-black" placeholder="CRM, אקסל, מערכת הנה״ח...">
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">איזה מידע חיוני חסר לכם באופן קבוע כדי לקבל החלטות טובות יותר?</label>
+                            <textarea id="dataMissingInfo" class="form-textarea print-border-gray print-text-black" rows="2" placeholder="לדוגמה: מה מקור הלידים הכי רווחיים? כמה זמן לוקח לסגור עסקה?"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Marketing & Lead Gen -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        <h2 class="text-xl font-bold print-text-black">5. שיווק וגיוס לקוחות</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">איך לקוחות חדשים מגיעים אליכם? (ניתן לסמן מספר אפשרויות)</label>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="leadSources">
+                                <label class="flex items-center space-x-2 space-x-reverse"><input name="leadSource" value="social" type="checkbox" class="form-checkbox"> <span class="print-text-black">רשתות חברתיות</span></label>
+                                <label class="flex items-center space-x-2 space-x-reverse"><input name="leadSource" value="paid" type="checkbox" class="form-checkbox"> <span class="print-text-black">פרסום ממומן</span></label>
+                                <label class="flex items-center space-x-2 space-x-reverse"><input name="leadSource" value="referrals" type="checkbox" class="form-checkbox"> <span class="print-text-black">הפניות</span></label>
+                                <label class="flex items-center space-x-2 space-x-reverse"><input name="leadSource" value="seo" type="checkbox" class="form-checkbox"> <span class="print-text-black">אורגני (SEO)</span></label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">כשנכנס ליד חדש, מה קורה איתו? תארו את התהליך.</label>
+                            <textarea id="leadProcess" class="form-textarea print-border-gray print-text-black" rows="3" placeholder="לדוגמה: המזכירה מקבלת מייל, מעבירה אותו לאיש מכירות בווטסאפ, הוא מכניס אותו לאקסל, ואז מתקשר... זמן תגובה ממוצע: X שעות"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Sales Process -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                        <h2 class="text-xl font-bold print-text-black">6. תהליך המכירה</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">מהן המשימות הכי בזבזניות בזמן של צוות המכירות?</label>
+                            <textarea id="salesTimeWasters" class="form-textarea print-border-gray print-text-black" rows="2" placeholder="לדוגמה: הזנת נתונים ל-CRM, שליחת מיילים של פולואפ, הכנת הצעות מחיר, תיאום פגישות..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">איך אתם מנהלים פולואפים אחרי שליחת הצעת מחיר?</label>
+                            <textarea id="salesFollowUp" class="form-textarea print-border-gray print-text-black" rows="2" placeholder="מערכת אוטומטית? תזכורות ידניות ביומן? זיכרון אנושי?"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Customer Service -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.17 48.17 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
+                        <h2 class="text-xl font-bold print-text-black">7. ניהול לקוחות ושירות</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">מהן 3 השאלות הנפוצות ביותר שלקוחות שואלים?</label>
+                            <textarea id="serviceFaq" class="form-textarea print-border-gray print-text-black" rows="3" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">תארו את תהליך הקליטה (Onboarding) של לקוח חדש.</label>
+                            <textarea id="serviceOnboarding" class="form-textarea print-border-gray print-text-black" rows="3" placeholder="לדוגמה: שליחת מייל ברוכים הבאים, קביעת פגישת התנעה, שליחת חוזה לחתימה, פתיחת תיקייה בדרייב..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 8: Operations -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6h1.5m-1.5 3h1.5m-1.5 3h1.5M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
+                        <h2 class="text-xl font-bold print-text-black">8. תפעול וניהול פנימי</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">אילו מערכות/תוכנות נמצאות בשימוש יומיומי בעסק?</label>
+                            <textarea id="opsSystems" class="form-textarea print-border-gray print-text-black" rows="3" placeholder="לדוגמה: Google Workspace, Monday, Slack, חשבונית ירוקה, ווטסאפ..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">האם יש מידע שאתם מעתיקים ידנית ממערכת אחת לאחרת?</label>
+                            <textarea id="opsManualCopy" class="form-textarea print-border-gray print-text-black" rows="2" placeholder="לדוגמה: העתקת פרטי לקוח מהאתר ל-CRM, העתקת פרטי עסקה לחשבונית..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 9: Summary & Recommendations -->
+            <div class="bg-[#1a1f3c] rounded-2xl border border-[#2a305a] print-bg-white print-border-gray">
+                <button class="accordion-button w-full flex justify-between items-center p-6 text-right">
+                    <div class="flex items-center gap-4">
+                        <svg class="w-8 h-8 gradient-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.682 16.072a4.5 4.5 0 01-4.056-4.056l-5.6-1.352A2.25 2.25 0 012.34 7.74l3.58-3.58a2.25 2.25 0 012.88-1.036l1.036 2.88a2.25 2.25 0 01-1.036 2.88l-3.58 3.58a2.25 2.25 0 01-2.88 1.036l-1.036-2.88a2.25 2.25 0 011.036-2.88l3.58-3.58a2.25 2.25 0 012.88 1.036l2.88 1.036a2.25 2.25 0 011.036 2.88l-3.58 3.58a2.25 2.25 0 01-2.88-1.036l-1.036-2.88" /></svg>
+                        <h2 class="text-xl font-bold print-text-black">9. סיכום, המלצות וצעדים הבאים</h2>
+                    </div>
+                    <svg class="w-6 h-6 accordion-arrow transition-transform print-text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content px-6">
+                    <div class="space-y-6 pb-6">
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">סיכום ממצאים ותובנות מרכזיות</label>
+                            <textarea id="summaryFindings" class="form-textarea print-border-gray print-text-black" rows="4" placeholder="כאן יירשם סיכום האבחון..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">"הזדמנויות הזהב" - 3 האוטומציות בעלות האימפקט הגבוה ביותר</label>
+                            <textarea id="summaryOpportunities" class="form-textarea print-border-gray print-text-black" rows="3" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-semibold text-gray-300 mb-2 print-text-black">הצעדים הבאים</label>
+                            <textarea id="summaryNextSteps" class="form-textarea print-border-gray print-text-black" rows="3" placeholder="פירוט תוכנית הפעולה המוצעת..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Print Button -->
+        <div class="mt-12 text-center no-print flex justify-center gap-4">
+            <button id="saveButton" class="bg-green-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-600 transition-colors">
+                שמור טופס
+            </button>
+            <button onclick="window.print()" class="bg-gradient-to-r from-[#5D5FEF] to-[#8D5FF1] text-white font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity">
+                הדפס או שמור כ-PDF
+            </button>
+        </div>
+
+    </div>
+
+    <script src="https-www-gstatic-com-firebasejs-9-6-10-firebase-app-compat.js"></script>
+    <script src="https-www-gstatic-com-firebasejs-9-6-10-firebase-auth-compat.js"></script>
+    <script src="https-www-gstatic-com-firebasejs-9-6-10-firebase-firestore-compat.js"></script>
+    <script src="../src/config/firebaseConfig.js"></script>
+    <script src="client-details.js"></script>
+</body>
+</html>

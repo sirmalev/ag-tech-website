@@ -1,0 +1,417 @@
+/* about.css */
+
+/* Hero Section */
+.about-hero {
+    background: var(--background-color);
+    padding: 120px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.about-hero p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.mission-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-content .icon-container {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    background: var(--primary-color-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mission-content .icon-container svg {
+    width: 30px;
+    height: 30px;
+    color: var(--primary-color);
+}
+
+.mission-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.mission-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Unique Features Section */
+.unique-section {
+    padding: 80px 0;
+}
+
+.unique-section .section-header p {
+    max-width: 700px;
+    margin: 15px auto 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.unique-features-list {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    background: var(--medium-blue);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.feature-icon svg {
+    width: 45px;
+    height: 45px;
+    color: var(--primary-color);
+}
+
+.feature-content h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.feature-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Game Section */
+.game-section {
+    padding: 80px 0;
+    background: var(--background-light);
+    text-align: center;
+}
+
+.game-container {
+    background-color: var(--dark-blue);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.game-hole {
+    width: 100%;
+    padding-top: 100%; /* Creates a square aspect ratio */
+    background-color: var(--medium-blue);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid var(--border-color);
+}
+
+.task {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--primary-gradient);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: top 0.2s ease-in-out;
+    user-select: none;
+}
+
+.task.up {
+    top: 0;
+}
+
+.task-icon {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.task-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.game-controls {
+    width: 100%;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.stat span:first-child {
+    color: var(--text-secondary);
+    display: block;
+    font-size: 1rem;
+}
+
+.stat span:last-child {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.game-end-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 40, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 10;
+}
+
+.game-end-message h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.game-end-message p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-end-message.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#automate-btn {
+    font-size: 1.1rem;
+}
+
+/* New Team Section (Strengths) */
+.team-section {
+    padding: 80px 0;
+    /* No background, will inherit from body */
+}
+
+.team-strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.strength-card {
+    background: var(--medium-blue);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.strength-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.strength-card .icon-container {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    background-image: var(--primary-gradient);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strength-card .icon-container svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+/* Management Section (formerly Team Section) */
+.management-section {
+    padding: 80px 0;
+    background: var(--background-light);
+}
+
+.management-grid {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.management-card {
+    text-align: center;
+    max-width: 450px;
+}
+
+.management-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px auto;
+    border: 5px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--medium-blue);
+}
+
+.management-card:hover .management-photo {
+    transform: scale(1.05);
+}
+
+.management-photo svg {
+    width: 90px;
+    height: 90px;
+    color: var(--primary-color);
+    stroke-width: 1;
+}
+
+.management-info h3 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.management-info .title {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.management-info .bio {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-links svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .feature-item,
+    .feature-item:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .feature-content h3 {
+        font-size: 1.6rem;
+    }
+
+}
+
+/* Responsive for game */
+@media (max-width: 500px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .task-icon {
+        font-size: 1.5rem;
+    }
+    .task-name {
+        font-size: 0.7rem;
+    }
+}

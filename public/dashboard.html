@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פאנל ניהול - Aloutomation.guru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="addClientPopup.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <div class="container navbar">
+            <a href="/" class="logo"><img src="assets/logo.png" alt="Aloutomation.guru Logo" class="logo-img"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#clients">לקוחות</a></li>
+                    <li><a href="#settings">הגדרות</a></li>
+                </ul>
+            </nav>
+            <button id="logout-btn" class="btn btn-primary">התנתק</button>
+        </div>
+    </header>
+
+    <main class="dashboard-main container">
+        <h1>ברוכים הבאים לפאנל הניהול</h1>
+        <p>כאן תוכלו לנהל את הלקוחות שלכם.</p>
+
+        <section id="clients" class="dashboard-section">
+            <h2>ניהול לקוחות</h2>
+            <div id="clients-list">
+                <!-- Client data will be loaded here -->
+            </div>
+        </section>
+        <div class="add-client-container">
+            <button id="add-client-btn" class="btn btn-primary">אפיין לקוח חדש</button>
+        </div>
+    </main>
+
+    <!-- The Popup -->
+    <div id="addClientPopup" class="popup">
+        <!-- Popup content -->
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>הוספת לקוח חדש</h2>
+            <form id="addClientForm">
+                <input type="text" id="clientName" name="clientName" placeholder="שם הלקוח" required>
+                <input type="tel" id="clientPhone" name="clientPhone" placeholder="מספר טלפון" required>
+                <button type="submit" class="btn btn-primary">הוסף לקוח</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מרכז הידע של AG Technology | מאמרים על אוטומציה, AI ועסקים</title>
+    <meta name="description" content="גלו מאמרים, מדריכים ועדכונים על איך טכנולוגיות אוטומציה ובינה מלאכותית (AI) יכולות לשנות את העסק שלכם, לחסוך זמן ולהגדיל רווחים.">
+    <link rel="canonical" href="https://www.aloutomation.guru/blog">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.aloutomation.guru/blog">
+    <meta property="og:title" content="מרכז הידע של AG Technology | מאמרים על אוטומציה, AI ועסקים">
+    <meta property="og:description" content="גלו מאמרים, מדריכים ועדכונים על איך טכנולוגיות אוטומציה ו-AI יכולות לשנות את העסק שלכם.">
+    <meta property="og:image" content="https://www.aloutomation.guru/assets/social-share.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="/index.html" class="logo"><img src="/assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/about.html">אודות</a></li>
+                    <li><a href="/index.html#process">התהליך שלנו</a></li>
+                    <li><a href="/index.html#calculator">מחשבון חיסכון</a></li>
+                    <li><a href="/blog">מאמרים</a></li>
+                    <li><a href="/index.html#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+            <a href="/index.html#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-page-section" style="padding-top: 80px;">
+            <div class="container">
+                <div class="blog-page-header">
+                    <div class="container">
+                        <h1>מרכז הידע שלנו.</h1>
+                        <p>מאמרים ועדכונים על טכנולוגיה, AI ועסקים</p>
+                    </div>
+                </div>
+
+                <div class="blog-filters">
+                    <div class="filter-group">
+                        <label for="category-filter">קטגוריה:</label>
+                        <select id="category-filter">
+                            <option value="all">הכל</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="author-filter">מחבר:</label>
+                        <select id="author-filter">
+                            <option value="all">הכל</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="date-sort">סדר לפי תאריך:</label>
+                        <select id="date-sort">
+                            <option value="newest">מהחדש לישן</option>
+                            <option value="oldest">מהישן לחדש</option>
+                        </select>
+                    </div>
+                    <div class="post-count">
+                        <span>סה"כ מאמרים: <span id="post-count-number">0</span></span>
+                    </div>
+                </div>
+                
+                <div id="blog-posts-container" class="blog-posts-grid" style="padding-top: 60px;">
+                    <!-- Blog posts will be loaded here dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 AG Technology. כל הזכויות שמורות. </p>
+                <p><a href="/about.html">אודות</a> | <a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/blog.js"></script>
+    <script src="/main.js"></script>
+    <script src="/accessibility.js"></script>
+    <script type="module" src="/cookie-consent.js"></script>
+</body>
+</html>

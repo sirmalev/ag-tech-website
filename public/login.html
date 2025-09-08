@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>התחברות - Aloutomation.guru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <img src="assets/logo.png" alt="Aloutomation.guru Logo" class="login-logo">
+        <h2>התחברות למערכת הניהול</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">אימייל</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">סיסמה</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">התחבר</button>
+        </form>
+     
+        <p class="login-footer">רק למשתמשים מורשים</p>
+    </div>
+
+    <script type="module" src="auth.js"></script>
+</body>
+</html>
