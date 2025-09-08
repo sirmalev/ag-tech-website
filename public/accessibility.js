@@ -1,6 +1,6 @@
 /**
  * Accessibility Widget - Packaged Version
- * Author: Gemini
+ * Author: Geminii
  * Version: 1.3.1
  * Description: A self-contained accessibility widget. Fixes button click area issue.
  */
