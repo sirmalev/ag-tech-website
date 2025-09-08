@@ -2,7 +2,7 @@
   
 # AG Technology - Company Website & Blog 🚀
 
-Source code for the official website of AG Technology, a company specializing in automation and AI solutions for businesses. The site serves as a marketing tool, contact point, and content platform.333
+Source code for the official website of AG Technology, a company specializing in automation and AI solutions for businesses. The site serves as a marketing tool, contact point, and content platform.
 
 <br/>
 
