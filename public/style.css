@@ -165,11 +165,20 @@ header.scrolled {
 }
 
 .hero h1 {
-    font-size: 3.8rem;
+    font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 20px;
     max-width: 800px;
     margin: 0 auto 20px;
+    transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.hero:hover h1 {
+    transform: scale(1.02);
+}
+
+.hero:hover h1 .highlight {
+    filter: drop-shadow(0 0 35px rgba(141, 95, 241, 1));
 }
 
 .hero .highlight {

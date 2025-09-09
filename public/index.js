@@ -30,28 +30,36 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-    // Advanced "Neural Flow" Canvas Animation
+    // Interactive "Chaos to Order" Orb Animation
+    const heroSection = document.querySelector('.hero');
     const canvas = document.getElementById('hero-canvas');
-    if (canvas) {
+    if (canvas && heroSection) {
         const ctx = canvas.getContext('2d');
         let animationFrameId;
         let particles = [];
-        const options = {
-            particleColor: "rgb(141, 95, 241)",
-            lineColor: "rgb(141, 95, 241)",
-            particleAmount: 30,
-            defaultRadius: 1.5,
-            variantRadius: 1,
-            defaultSpeed: 0.3,
-            variantSpeed: 0.5,
-            linkRadius: 180,
+        let isOrganized = false;
+        let mouse = {
+            x: window.innerWidth / 2,
+            y: window.innerHeight / 2
         };
 
-        if (window.innerWidth > 768) {
-            options.particleAmount = 60;
-        }
-        if (window.innerWidth > 1200) {
-            options.particleAmount = 80;
+        const options = {
+            particleColor: "rgba(141, 95, 241, 0.8)",
+            particleAmount: 70,
+            defaultRadius: 1.5,
+            variantRadius: 1,
+            chaoticSpeed: 0.6,
+            organizedSpeed: 0.004,
+            orbRadius: 150,
+            lerpFactor: 0.04,
+            linkRadius: 70,
+            lineColor: "rgba(141, 95, 241, 0.3)"
+        };
+
+        if (window.innerWidth < 768) {
+            options.particleAmount = 40;
+            options.orbRadius = 100;
+            options.linkRadius = 50;
         }
 
         function resizeCanvas() {
@@ -63,13 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
+                
+                this.chaoticSpeedX = (Math.random() - 0.5) * options.chaoticSpeed;
+                this.chaoticSpeedY = (Math.random() - 0.5) * options.chaoticSpeed;
+
+                this.angle = Math.random() * Math.PI * 2;
                 this.radius = options.defaultRadius + Math.random() * options.variantRadius;
-                this.speed = options.defaultSpeed + Math.random() * options.variantSpeed;
-                this.directionAngle = Math.floor(Math.random() * 360);
-                this.vector = {
-                    x: Math.cos(this.directionAngle) * this.speed,
-                    y: Math.sin(this.directionAngle) * this.speed
-                }
+                
+                // For organized state: each particle gets a base distance and its own "breathing" rhythm
+                this.baseDistanceFromCenter = options.orbRadius + (Math.random() - 0.5) * 60;
+                // Primary, faster oscillation
+                this.oscillationAngle = Math.random() * Math.PI * 2;
+                this.oscillationSpeed = 0.01 + Math.random() * 0.02;
+                // Secondary, slower and more subtle oscillation for more organic movement
+                this.oscillationAngle2 = Math.random() * Math.PI * 2;
+                this.oscillationSpeed2 = 0.005 + Math.random() * 0.01;
+                // Each particle gets its own rotation speed
+                this.ownOrganizedSpeed = options.organizedSpeed * (0.8 + Math.random() * 0.4);
+                // Each particle gets its own follow-speed (lerp factor) for a more organic, loose feel
+                this.ownLerpFactor = options.lerpFactor * (0.6 + Math.random() * 0.8); // Range from 60% to 140%
             }
 
             draw() {
@@ -81,22 +101,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             update() {
-                this.border();
-                this.x += this.vector.x;
-                this.y += this.vector.y;
-            }
+                if (isOrganized) {
+                    // "Breathe" effect: particles oscillate their distance from the center using two combined sine waves
+                    this.oscillationAngle += this.oscillationSpeed;
+                    this.oscillationAngle2 += this.oscillationSpeed2;
+                    const oscillation1 = Math.sin(this.oscillationAngle) * 15; // Main oscillation
+                    const oscillation2 = Math.sin(this.oscillationAngle2) * 8;  // Secondary oscillation
+                    const currentDistanceFromCenter = this.baseDistanceFromCenter + oscillation1 + oscillation2;
 
-            border() {
-                if (this.x >= canvas.width || this.x <= 0) {
-                    this.vector.x *= -1;
+                    const targetX = mouse.x + Math.cos(this.angle) * currentDistanceFromCenter;
+                    const targetY = mouse.y + Math.sin(this.angle) * currentDistanceFromCenter;
+                    
+                    this.x += (targetX - this.x) * this.ownLerpFactor;
+                    this.y += (targetY - this.y) * this.ownLerpFactor;
+
+                    this.angle += this.ownOrganizedSpeed;
+                } else {
+                    this.x += this.chaoticSpeedX;
+                    this.y += this.chaoticSpeedY;
+
+                    if (this.x <= 0 || this.x >= canvas.width) {
+                        this.chaoticSpeedX *= -1;
+                        this.x = Math.max(0, Math.min(canvas.width, this.x)); // Clamp position
+                    }
+                    if (this.y <= 0 || this.y >= canvas.height) {
+                        this.chaoticSpeedY *= -1;
+                        this.y = Math.max(0, Math.min(canvas.height, this.y)); // Clamp position
+                    }
                 }
-                if (this.y >= canvas.height || this.y <= 0) {
-                    this.vector.y *= -1;
-                }
-                if (this.x > canvas.width) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = canvas.height;
-                if (this.x < 0) this.x = 0;
-                if (this.y < 0) this.y = 0;
             }
         }
 
@@ -105,27 +137,29 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < options.particleAmount; i++) {
                 particles.push(new Particle());
             }
-            window.cancelAnimationFrame(animationFrameId);
+            if (animationFrameId) {
+                window.cancelAnimationFrame(animationFrameId);
+            }
             animationFrameId = window.requestAnimationFrame(loop);
         }
 
         function linkParticles() {
+            const linkRadiusSquared = options.linkRadius * options.linkRadius;
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
                     const O = particles[i];
                     const T = particles[j];
-                    const distance = Math.sqrt(
-                        (O.x - T.x) * (O.x - T.x) +
-                        (O.y - T.y) * (O.y - T.y)
-                    );
-                    if (distance < options.linkRadius) {
-                        const opacity = 1 - (distance / options.linkRadius);
-                        ctx.strokeStyle = `rgba(141, 95, 241, ${opacity})`;
-                        ctx.lineWidth = 0.5;
+                    const dx = O.x - T.x;
+                    const dy = O.y - T.y;
+                    const distanceSquared = dx * dx + dy * dy;
+
+                    if (distanceSquared < linkRadiusSquared) {
+                        const opacity = 1 - (distanceSquared / linkRadiusSquared);
+                        ctx.strokeStyle = `rgba(141, 95, 241, ${opacity * 0.4})`;
+                        ctx.lineWidth = 0.8;
                         ctx.beginPath();
                         ctx.moveTo(O.x, O.y);
                         ctx.lineTo(T.x, T.y);
-                        ctx.closePath();
                         ctx.stroke();
                     }
                 }
@@ -134,16 +168,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
         function loop() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            if(particles.length === 0) {
-                setup();
-            }
-            linkParticles();
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
+            if (isOrganized) {
+                linkParticles();
+            }
             animationFrameId = window.requestAnimationFrame(loop);
         }
+
+        heroSection.addEventListener('mousemove', e => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+        heroSection.addEventListener('mouseenter', () => { isOrganized = true; });
+        heroSection.addEventListener('mouseleave', () => { isOrganized = false; });
 
         window.addEventListener('resize', () => {
             resizeCanvas();
