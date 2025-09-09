@@ -22,6 +22,65 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- CSS for New Interactive Icons --- */
+        /* General hover effect for the container */
+        .point-card .icon-container {
+            transition: transform 0.3s ease;
+        }
+        .point-card:hover .icon-container {
+            transform: scale(1.05);
+        }
+        .point-card .icon-container svg {
+            overflow: visible; /* Important for some animations */
+        }
+
+        /* Icon 1: Chaotic Clock */
+        .chaotic-clock .clock-hand {
+            transform-origin: 50% 50%;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .chaotic-clock .hour-hand {
+            /* Starts a bit slower */
+            animation: spin-hour 3s linear infinite;
+        }
+        .chaotic-clock .minute-hand {
+            /* Starts faster and more chaotic */
+            animation: spin-minute 1.2s linear infinite;
+        }
+        .point-card:hover .chaotic-clock .hour-hand {
+            animation: none;
+            transform: rotate(90deg); /* Points to 3 */
+        }
+        .point-card:hover .chaotic-clock .minute-hand {
+            animation: none;
+            transform: rotate(180deg); /* Points to 6 */
+        }
+        @keyframes spin-hour { to { transform: rotate(360deg); } }
+        @keyframes spin-minute { to { transform: rotate(1080deg); } }
+
+        /* Icon 2: Unruly Chart */
+        .unruly-chart .bar {
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1); /* Bouncy transition */
+            transform-origin: bottom;
+        }
+        /* Initial chaotic state */
+        .unruly-chart .bar-1 { transform: scaleY(0.5) rotate(4deg); }
+        .unruly-chart .bar-2 { transform: scaleY(0.7) rotate(-6deg); }
+        .unruly-chart .bar-3 { transform: scaleY(0.4) rotate(5deg); }
+        /* Hover state - organized and grown */
+        .point-card:hover .unruly-chart .bar {
+            transform: scaleY(1) rotate(0deg);
+        }
+
+        /* Icon 3: From Guesswork to Clarity */
+        .insight-morph .icon-part {
+            transition: opacity 0.4s ease-in-out, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .insight-morph .graph-part { opacity: 0; transform: translateY(8px) scale(0.8); }
+        .point-card:hover .insight-morph .question-part { opacity: 0; transform: translateY(-8px) scale(0.8); }
+        .point-card:hover .insight-morph .graph-part { opacity: 1; transform: translateY(0) scale(1); }
+    </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
@@ -94,8 +153,10 @@
                 <div class="points-grid">
                     <div class="point-card fade-in">
                         <div class="icon-container">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle><polyline class="icon-time" points="12 6 12 12 16 14"></polyline>
+                            <svg class="chaotic-clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line class="clock-hand hour-hand" x1="12" y1="12" x2="12" y2="7"></line>
+                                <line class="clock-hand minute-hand" x1="12" y1="12" x2="16" y2="12"></line>
                             </svg>
                         </div>
                         <h3>שעות "שרופות", אפס התקדמות</h3>
@@ -103,8 +164,11 @@
                     </div>
                     <div class="point-card fade-in" style="transition-delay: 0.2s;">
                         <div class="icon-container">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="icon-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 3v18h18"></path><path d="M18 18v-5"></path><path d="M13 18v-8"></path><path d="M8 18v-3"></path>
+                            <svg class="unruly-chart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3v18h18" stroke-width="2"></path>
+                                <rect class="bar bar-1" x="7" y="12" width="4" height="6" fill="currentColor"></rect>
+                                <rect class="bar bar-2" x="12" y="9" width="4" height="9" fill="currentColor"></rect>
+                                <rect class="bar bar-3" x="17" y="6" width="4" height="12" fill="currentColor"></rect>
                             </svg>
                         </div>
                         <h3>לידים קרים, הזדמנויות אבודות</h3>
@@ -112,8 +176,9 @@
                     </div>
                     <div class="point-card fade-in" style="transition-delay: 0.4s;">
                         <div class="icon-container">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path class="icon-star" d="M12 2L9 9l-7 2 5 5-2 7 7-5 7 5-2-7 5-5-7-2z"></path>
+                            <svg class="insight-morph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <g class="icon-part question-part"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3v0"></path><path d="M12 17h.01"></path></g>
+                                <g class="icon-part graph-part"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></g>
                             </svg>
                         </div>
                         <h3>מנחשים במקום לדעת</h3>
@@ -136,7 +201,7 @@
         <section id="process" class="process-section">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>המתודולוגיה שלנו: מאבחון כירורגי לפתרון שמייצר ROI</h2>
+                    <h2>המתודולוגיה שלנו: מאבחון כירורגי לפתרון שמייצר רווח</h2>
                     <p>תהליך מוכח בשני שלבים שמבטיח פתרון מדויק לצרכים שלכם, ולא "פתרון מדף".</p>
                 </div>
                 <div class="process-steps">
