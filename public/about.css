@@ -415,3 +415,127 @@
         font-size: 0.7rem;
     }
 }
+
+/* --- New Animated Feature Icons --- */
+
+/* 1. Strategy Blueprint */
+.strategy-blueprint .blueprint-lines {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    transition: stroke-dashoffset 1s ease-out;
+}
+.strategy-blueprint .compass-point {
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s;
+    transform-origin: center;
+}
+.feature-item:hover .strategy-blueprint .blueprint-lines {
+    stroke-dashoffset: 0;
+}
+.feature-item:hover .strategy-blueprint .compass-point {
+    transform: scale(1);
+}
+
+/* 2. Partnership Puzzle */
+.partnership-puzzle .puzzle-piece-moving {
+    /* Start further away for a more noticeable animation */
+    transform: translate(10px, -10px) rotate(15deg);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.feature-item:hover .partnership-puzzle .puzzle-piece-moving {
+    transform: translate(0, 0) rotate(0deg);
+}
+
+.feature-item:hover .partnership-puzzle {
+    /* Add a 'connection' pulse effect after the piece moves into place */
+    animation: puzzle-connect-pulse 0.8s ease-out 0.4s;
+}
+
+@keyframes puzzle-connect-pulse {
+    0%, 100% { filter: none; }
+    50% { filter: drop-shadow(0 0 8px var(--primary-color)); }
+}
+
+/* 3. Human-centric Smile */
+.human-centric-smile .mouth-neutral, .human-centric-smile .mouth-smile {
+    transition: opacity 0.4s ease-in-out;
+}
+.human-centric-smile .mouth-smile {
+    opacity: 0;
+    stroke: var(--primary-color);
+    stroke-width: 2;
+}
+.feature-item:hover .human-centric-smile .mouth-neutral {
+    opacity: 0;
+}
+.feature-item:hover .human-centric-smile .mouth-smile {
+    opacity: 1;
+}
+
+/* 4. Proven Business Value Graph */
+.value-graph .graph-line {
+    stroke: var(--primary-color);
+    stroke-width: 2.5;
+    stroke-dasharray: 35;
+    stroke-dashoffset: 35;
+    transition: stroke-dashoffset 1s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.feature-item:hover .value-graph .graph-line {
+    stroke-dashoffset: 0;
+}
+
+/* --- Team Strengths Icons Animations --- */
+
+/* 1. Strategy Compass */
+.strategy-compass .compass-needle {
+    transform-origin: center;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.strength-card:hover .strategy-compass .compass-needle {
+    transform: rotate(360deg);
+}
+/* Removed the color change on the circle to avoid sudden color shifts */
+.strategy-compass .compass-circle {
+    transition: transform 0.4s ease;
+}
+.strength-card:hover .strategy-compass .compass-circle {
+    transform: scale(1.05);
+    transform-origin: center;
+}
+
+/* 2. Detail Lightning */
+.strength-card:hover .detail-lightning {
+    animation: lightning-crackle 0.8s ease-in-out;
+    /* Changed glow to white for a more natural effect */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+    transform: scale(1.05);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes lightning-crackle {
+    0% { transform: scale(1.05) skewX(0); }
+    25% { transform: scale(1.05) skewX(-5deg) skewY(5deg); }
+    50% { transform: scale(1.05) skewX(5deg) skewY(-5deg); }
+    75% { transform: scale(1.05) skewX(-3deg) skewY(3deg); }
+    100% { transform: scale(1.05) skewX(0); }
+}
+
+/* 3. Commitment Success */
+.commitment-success .success-check {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    stroke-width: 2; /* Set a base width */
+    /* Removed stroke color from transition to prevent color change */
+    transition: stroke-dashoffset 0.5s ease-in-out, stroke-width 0.4s ease;
+}
+.strength-card:hover .commitment-success .success-check {
+    stroke-dashoffset: 0;
+    stroke-width: 2.5;
+}
+/* Added a subtle lift to the user icon for more interactivity */
+.commitment-success .user-path {
+    transition: transform 0.4s ease-out;
+}
+.strength-card:hover .commitment-success .user-path {
+    transform: translateY(-1px);
+}

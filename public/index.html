@@ -80,6 +80,87 @@
         .insight-morph .graph-part { opacity: 0; transform: translateY(8px) scale(0.8); }
         .point-card:hover .insight-morph .question-part { opacity: 0; transform: translateY(-8px) scale(0.8); }
         .point-card:hover .insight-morph .graph-part { opacity: 1; transform: translateY(0) scale(1); }
+
+        /* --- CSS for Step 2 Service Icons --- */
+        .service-item .icon-container {
+            animation: none; /* Override old float animation */
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover .icon-container {
+            transform: scale(1.1);
+        }
+
+        /* 1. CRM Network Icon */
+        .crm-network .add-mark {
+            transform-origin: center;
+            transform: scale(0) rotate(-90deg);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .service-item:hover .crm-network .add-mark {
+            transform: scale(1) rotate(0deg);
+        }
+
+        /* 2. Automation Gears Icon */
+        .automation-gears {
+            transform-origin: center;
+            transition: transform 1s ease-in-out;
+        }
+        .service-item:hover .automation-gears {
+            transform: rotate(180deg);
+        }
+
+        /* 3. Smart Dashboard Icon - Pie Chart */
+        .smart-pie-chart .pie-segment {
+            transform-origin: center;
+            stroke-dashoffset: 57; /* Approx Circumference */
+            transition: stroke-dashoffset 0.8s cubic-bezier(0.45, 0, 0.55, 1);
+        }
+        .smart-pie-chart .segment-1 {
+            stroke: var(--primary-color);
+            stroke-dasharray: 25 57;
+        }
+        .smart-pie-chart .segment-2 {
+            stroke: #a07ff3; /* Lighter shade */
+            stroke-dasharray: 18 57;
+            transition-delay: 0.2s; /* Stagger the animation */
+        }
+        /* Hover state - segments draw themselves */
+        .service-item:hover .smart-pie-chart .pie-segment {
+            stroke-dashoffset: 0;
+        }
+        /* 4. System Integration Icon */
+        .integration-link .link-part {
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .integration-link .link-1 { transform: translate(3px, -3px); }
+        .integration-link .link-2 { transform: translate(-3px, 3px); }
+        .service-item:hover .integration-link .link-part {
+            transform: translate(0, 0);
+        }
+
+        /* 5. AI Chatbot Icon */
+        .ai-chatbot .typing-dots, .ai-chatbot .ai-sparkle {
+            transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .ai-chatbot .typing-dots circle {
+            animation: typing-fade 1.5s infinite;
+            opacity: 0;
+        }
+        .ai-chatbot .typing-dots circle:nth-child(2) { animation-delay: 0.25s; }
+        .ai-chatbot .typing-dots circle:nth-child(3) { animation-delay: 0.5s; }
+        @keyframes typing-fade {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        .ai-chatbot .ai-sparkle {
+            opacity: 0;
+            transform-origin: center;
+            transform: scale(0.5) rotate(-45deg);
+        }
+        .service-item:hover .ai-chatbot .typing-dots { opacity: 0; transform: scale(0.7); }
+        .service-item:hover .ai-chatbot .ai-sparkle {
+            opacity: 1; transform: scale(1) rotate(0deg);
+        }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
@@ -217,28 +298,42 @@
                         <div class="services-grid">
                             <div class="service-item">
                                 <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    <svg class="crm-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <g class="user-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle></g>
+                                        <g class="add-mark"><line x1="18" y1="8" x2="18" y2="14"></line><line x1="15" y1="11" x2="21" y2="11"></line></g>
+                                    </svg>
                                 </div><span>מערכות CRM וניהול</span>
                             </div>
                             <div class="service-item">
                                 <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                                    <svg class="automation-gears" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
                                 </div><span>אוטומציה לתהליכים</span>
                             </div>
                             <div class="service-item">
                                 <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"></line><line x1="18" x2="18" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="16"></line></svg>
+                                    <svg class="smart-pie-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round">
+                                        <circle class="pie-background" cx="12" cy="12" r="9" opacity="0.2"></circle>
+                                        <g transform="rotate(-90 12 12)"><circle class="pie-segment segment-1" cx="12" cy="12" r="9"></circle></g>
+                                        <g transform="rotate(65 12 12)"><circle class="pie-segment segment-2" cx="12" cy="12" r="9"></circle></g>
+                                    </svg>
                                 </div><span>דאשבורדים חכמים</span>
                             </div>
                             <div class="service-item">
                                 <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></svg>
+                                    <svg class="integration-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <g class="link-part link-1"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path></g>
+                                        <g class="link-part link-2"><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></g>
+                                    </svg>
                                 </div><span>אינטגרציה בין מערכות</span>
                             </div>
                             <div class="service-item">
                                 <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg class="ai-chatbot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="overflow: visible;">
                                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                        <g class="typing-dots">
+                                            <circle cx="8" cy="10" r="1" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10" r="1" fill="currentColor" stroke="none"></circle><circle cx="16" cy="10" r="1" fill="currentColor" stroke="none"></circle>
+                                        </g>
+                                        <g class="ai-sparkle"><path d="M12 6l1.2 2.8L16 10l-2.8 1.2L12 14l-1.2-2.8L8 10l2.8-1.2L12 6z" fill="currentColor" stroke="none"></path></g>
                                     </svg>
                                 </div>
                                 <span>צ'אטבוטים עם AI</span>
