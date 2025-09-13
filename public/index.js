@@ -346,3 +346,57 @@ document.addEventListener('DOMContentLoaded', () => {
             fireworksContainer.appendChild(particle);
         }
     }
+
+    // --- Service Popup Logic ---
+const serviceItems = document.querySelectorAll('.service-item[data-service]');
+const servicePopup = document.getElementById('service-popup');
+
+if (servicePopup) {
+    const popupTitle = servicePopup.querySelector('#popup-title');
+    const popupDescription = servicePopup.querySelector('#popup-description');
+    const closePopupButton = servicePopup.querySelector('.close-popup');
+
+    const openServicePopup = (service) => {
+        // The 'translations' object is now globally available from translation.js
+        if (!window.translations) {
+            console.error('Translation data is not available.');
+            return;
+        }
+
+        const lang = document.documentElement.lang || 'he';
+        const titleKey = `popup_${service}_title`;
+        const descKey = `popup_${service}_desc`;
+
+        popupTitle.innerHTML = window.translations[lang][titleKey] || '';
+        popupDescription.innerHTML = window.translations[lang][descKey] || '';
+
+        servicePopup.style.display = 'flex';
+        setTimeout(() => {
+            servicePopup.classList.add('visible');
+        }, 10);
+    };
+
+    const closeServicePopup = () => {
+        servicePopup.classList.remove('visible');
+        setTimeout(() => {
+            servicePopup.style.display = 'none';
+        }, 300); // Match CSS transition duration
+    };
+
+    serviceItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const service = item.dataset.service;
+            openServicePopup(service);
+        });
+    });
+
+    closePopupButton.addEventListener('click', closeServicePopup);
+
+    // Close when clicking the overlay
+    servicePopup.addEventListener('click', (e) => {
+        if (e.target === servicePopup) {
+            closeServicePopup();
+        }
+    });
+}
+// --- End of Service Popup Logic ---

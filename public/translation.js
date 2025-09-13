@@ -43,12 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
             'index_step1_h3': 'Step 1: 360° Diagnosis (Free of charge)',
             'index_step1_p': 'In a focused work session, we don\'t sell - we diagnose. Together, we will map out the processes in your business, identify the failure points that cause wasted time and money, and formulate an action plan with "golden opportunities" for automation with a quick return on investment.',
             'index_step2_h3': 'Step 2: Build, Implement, and Close Support',
-            'index_step2_p': 'Based on the diagnosis, we build and implement the exact system your business needs. This includes setting up CRM systems, automating processes, integrating between systems, implementing AI and chatbots, and building smart dashboards. The result: one, synchronized system that works for you 24/7.',
+            'index_step2_p': 'We turn the diagnosis into a practical solution. Our team builds and implements the tools that will save you time and increase profits. Click on each service to understand how it works.',
             'index_service_crm': 'CRM & Management Systems',
             'index_service_automation': 'Process Automation',
             'index_service_dashboards': 'Smart Dashboards',
             'index_service_integration': 'System Integration',
             'index_service_chatbots': 'AI Chatbots',
+            'popup_crm_title': 'One System for All Customers',
+            'popup_crm_desc': 'Stop losing customers in the chaos. We\'ll build you a single system that centralizes all customer information, leads, and sales. You\'ll know exactly what\'s happening with every customer, at any moment, and close more deals.',
+            'popup_automation_title': 'The Grunt Work? On Us.',
+            'popup_automation_desc': 'Tired of repetitive tasks? We\'ll make the computer do the work for you. Sending emails, updating spreadsheets, transferring data - it will all happen automatically, without errors, while you focus on growth.',
+            'popup_dashboards_title': 'Guessing? Start Knowing.',
+            'popup_dashboards_desc': 'Instead of guessing, start knowing. We\'ll build you a simple, visual dashboard that displays all your business\'s important data in one place. You\'ll understand what\'s working, what\'s not, and make smart decisions based on real information.',
+            'popup_integration_title': 'Connecting All the Dots',
+            'popup_integration_desc': 'Your systems don\'t talk to each other? We\'ll connect them. When your email, WhatsApp, website, and customer management system work together, information flows automatically, nothing falls through the cracks, and the business simply runs smoother.',
+            'popup_chatbots_title': '24/7 Customer Service, Even in Your Dreams',
+            'popup_chatbots_desc': 'Give your customers VIP service around the clock. We\'ll build you a smart chatbot that can answer questions, take inquiries, and even sell - while you\'re asleep. It\'s like hiring a customer service agent who never needs a break.',
             'index_calculator_h2': 'How much money can your business save per year?',
             'index_calculator_p': 'Enter 3 data points and discover your immediate savings potential from automation.',
             'index_calculator_employees': 'Number of employees on manual tasks',
@@ -241,12 +251,22 @@ document.addEventListener('DOMContentLoaded', () => {
             'index_step1_h3': 'שלב 1: אבחון 360° (ללא עלות)',
             'index_step1_p': 'בשיחת עבודה ממוקדת, אנחנו לא מוכרים - אנחנו מאבחנים. נמפה יחד את התהליכים בעסק, נזהה את נקודות הכשל שגורמות לבזבוז זמן וכסף, ונגבש תוכנית פעולה עם "הזדמנויות זהב" לאוטומציה בעלת החזר השקעה מהיר.',
             'index_step2_h3': 'שלב 2: בנייה, הטמעה וליווי צמוד',
-            'index_step2_p': 'בהתבסס על האבחון, אנחנו בונים ומטמיעים את המערכת המדויקת שהעסק שלכם צריך. זה כולל הקמת מערכות CRM, אוטומציה של תהליכים, אינטגרציה בין מערכות, הטמעת AI וצ\'אטבוטים, ובניית דאשבורדים חכמים. התוצאה: מערכת אחת, מסונכרנת, שעובדת בשבילכם 24/7.',
+            'index_step2_p': 'אנחנו הופכים את האבחון לפתרון מעשי. הצוות שלנו בונה ומטמיע את הכלים שיחסכו לכם זמן ויגדילו רווחים. לחצו על כל שירות כדי להבין איך זה עובד.',
             'index_service_crm': 'מערכות CRM וניהול',
             'index_service_automation': 'אוטומציה לתהליכים',
             'index_service_dashboards': 'דאשבורדים חכמים',
             'index_service_integration': 'אינטגרציה בין מערכות',
             'index_service_chatbots': 'צ\'אטבוטים עם AI',
+            'popup_crm_title': 'מערכת אחת לכל הלקוחות',
+            'popup_crm_desc': 'תפסיקו לאבד לקוחות בבלאגן. נבנה לכם מערכת אחת שמרכזת את כל המידע על הלקוחות, הפניות והמכירות. תדעו בדיוק מה קורה עם כל לקוח, בכל רגע, ותסגרו יותר עסקאות.',
+            'popup_automation_title': 'העבודה השחורה? זה עלינו',
+            'popup_automation_desc': 'נמאס לכם ממשימות שחוזרות על עצמן? אנחנו נגרום למחשב לעשות את העבודה במקומכם. שליחת מיילים, עדכון טבלאות, העברת נתונים - הכל יקרה אוטומטית, בלי טעויות ובזמן שאתם מתרכזים בצמיחה.',
+            'popup_dashboards_title': 'מנחשים? תתחילו לדעת',
+            'popup_dashboards_desc': 'במקום לנחש, תתחילו לדעת. נבנה לכם לוח מחוונים ויזואלי ופשוט שמציג את כל הנתונים החשובים של העסק במקום אחד. תבינו מה עובד, מה לא, ותקבלו החלטות חכמות שמבוססות על מידע אמיתי.',
+            'popup_integration_title': 'לחבר את כל הנקודות',
+            'popup_integration_desc': 'המערכות שלכם לא מדברות אחת עם השנייה? אנחנו נחבר אותן. כשהמייל, הוואטסאפ, האתר ומערכת הלקוחות שלכם עובדים יחד, המידע זורם אוטומטית, שום דבר לא נופל בין הכיסאות, והעסק פשוט עובד חלק יותר.',
+            'popup_chatbots_title': 'שירות לקוחות 24/7, גם בחלום',
+            'popup_chatbots_desc': 'תנו ללקוחות שלכם שירות VIP מסביב לשעון. נבנה לכם צ\'אטבוט חכם שיודע לענות על שאלות, לקבל פניות ואפילו למכור - גם כשאתם ישנים. זה כמו להעסיק איש שירות לקוחות שלא צריך הפסקות.',
             'index_calculator_h2': 'כמה כסף העסק שלכם יכול לחסוך בשנה?',
             'index_calculator_p': 'הזינו 3 נתונים וגלו את פוטנציאל החיסכון המיידי שלכם מאוטומציה.',
             'index_calculator_employees': 'מספר עובדים במשימות ידניות',
@@ -402,6 +422,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const switcher = document.getElementById('language-toggle');
     const he_option = document.querySelector('.lang-option[data-lang="he"]');
     const en_option = document.querySelector('.lang-option[data-lang="en"]');
+
+    window.translations = translations; // Make translations globally accessible
 
     const applyTranslations = (lang) => {
         // Assuming the site is always initially rendered in Hebrew.

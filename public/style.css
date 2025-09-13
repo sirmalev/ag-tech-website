@@ -406,6 +406,7 @@ input:checked + .slider:before {
 .service-item {
     display: flex;
     align-items: center;
+    cursor: pointer;
     gap: 15px;
     background: var(--medium-blue);
     padding: 15px;
@@ -856,15 +857,20 @@ footer {
 }
 
 .popup-content {
-    background-color: var(--medium-blue);
+    background-color: rgba(26, 31, 60, 0.85); /* --medium-blue with transparency */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 15px;
     text-align: center;
     border: 1px solid var(--border-color);
     position: relative;
+    max-width: 500px;
+    width: 90%;
     transform: scale(0.9);
     transition: transform 0.3s ease-in-out;
     z-index: 2002; /* Above fireworks */
+    color: var(--text-color);
 }
 
 .popup-overlay.visible .popup-content {
@@ -878,6 +884,24 @@ footer {
     font-size: 2rem;
     cursor: pointer;
     color: var(--text-secondary);
+}
+
+/* --- Service Popup --- */
+#service-popup .popup-content {
+    max-width: 600px;
+}
+
+#service-popup .popup-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+#service-popup .popup-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
 }
 
 /* --- High-Quality Fireworks --- */
