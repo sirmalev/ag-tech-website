@@ -22,6 +22,154 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Animations for Pain Points Section --- */
+
+        /* General card hover effect */
+        .point-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 1. Wasted Hours (Clock) Animation */
+        .point-card .hour-hand,
+        .point-card .minute-hand {
+            transform-origin: center;
+            transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        .point-card:hover .minute-hand {
+            transform: rotate(720deg);
+        }
+
+        .point-card:hover .hour-hand {
+            transform: rotate(60deg);
+        }
+
+        /* 2. Lost Opportunities (User) Animation */
+        .point-card .user-part {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .point-card .minus-part {
+            transition: transform 0.4s ease;
+            transform-origin: center;
+        }
+
+        .point-card:hover .user-part {
+            opacity: 0.3;
+            transform: translateX(-5px);
+        }
+
+        .point-card:hover .minus-part {
+            transform: scaleX(1.3);
+        }
+
+        /* 3. Guessing (Question Mark) Animation */
+        .point-card .question-mark {
+            transform-origin: center bottom;
+        }
+
+        .point-card:hover .question-mark {
+            animation: wobble 0.8s ease-in-out;
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-15deg); }
+            50% { transform: rotate(10deg); }
+            75% { transform: rotate(-5deg); }
+        }
+
+        /* --- Animations for Services Section --- */
+        .service-item {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 1. CRM Animation */
+        .crm-network .user-icon, .crm-network .add-mark {
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform-origin: center;
+        }
+        .service-item:hover .crm-network .add-mark {
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* 2. Automation Animation */
+        .automation-gears path, .automation-gears circle {
+            transform-origin: center;
+        }
+        .service-item:hover .automation-gears path {
+            animation: rotate-gear 4s linear infinite;
+        }
+        .service-item:hover .automation-gears circle {
+            animation: rotate-gear-reverse 6s linear infinite;
+        }
+        @keyframes rotate-gear {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes rotate-gear-reverse {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+
+        /* 3. Dashboards Animation */
+        .smart-pie-chart .pie-segment {
+            transition: stroke-dashoffset 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            stroke-dasharray: 57; /* 2 * PI * 9 */
+            stroke-dashoffset: 57;
+        }
+        .service-item:hover .smart-pie-chart .segment-1 {
+            stroke-dashoffset: 25; /* ~56% drawn */
+        }
+        .service-item:hover .smart-pie-chart .segment-2 {
+            stroke-dashoffset: 40; /* ~30% drawn */
+        }
+
+        /* 4. Integration Animation */
+        .integration-link .link-part {
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .service-item:hover .integration-link .link-1 {
+            transform: translateX(-2px) translateY(2px) rotate(-5deg);
+        }
+        .service-item:hover .integration-link .link-2 {
+            transform: translateX(2px) translateY(-2px) rotate(-5deg);
+        }
+
+        /* 5. Chatbots Animation */
+        .service-item:hover .ai-chatbot .typing-dots circle {
+            animation: typing-bubble 1.5s infinite;
+        }
+        .ai-chatbot .typing-dots circle:nth-child(2) { animation-delay: 0.2s; }
+        .ai-chatbot .typing-dots circle:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing-bubble {
+            0% { opacity: 0; }
+            30%, 50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .ai-chatbot .ai-sparkle {
+            transform-origin: center;
+        }
+        .service-item:hover .ai-chatbot .ai-sparkle {
+            animation: sparkle-effect 1.2s ease-in-out infinite;
+        }
+        @keyframes sparkle-effect {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.4) rotate(10deg); opacity: 0.7; }
+        }
+    </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
@@ -96,38 +244,46 @@
 
         <section class="pain-points">
             <div class="container">
-                <div class="section-header fade-in">
+                <div class="section-header">
                     <h2 data-lang-key="index_pain_h2">נשמע מוכר? אם כן, אתם מאבדים כסף בכל רגע.</h2>
                 </div>
                 <div class="points-grid">
-                    <div class="point-card fade-in">
+                    <div class="point-card">
                         <div class="icon-container">
-                            <svg class="chaotic-clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line class="clock-hand hour-hand" x1="12" y1="12" x2="12" y2="7"></line>
-                                <line class="clock-hand minute-hand" x1="12" y1="12" x2="16" y2="12"></line>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <g class="clock-hands">
+                                    <line class="hour-hand" x1="12" y1="12" x2="16" y2="14"/>
+                                    <line class="minute-hand" x1="12" y1="12" x2="12" y2="6"/>
+                                </g>
                             </svg>
                         </div>
                         <h3 data-lang-key="index_pain1_h3">שעות "שרופות", אפס התקדמות</h3>
                         <p data-lang-key="index_pain1_p">אתם והצוות שלכם מבזבזים שעות על משימות שחוזרות על עצמן? עדכון אקסלים, העתקת נתונים, שליחת מיילים... זה זמן יקר שאפשר להשקיע בצמיחה.</p>
                     </div>
-                    <div class="point-card fade-in" style="transition-delay: 0.2s;">
+                    <div class="point-card">
                         <div class="icon-container">
-                            <svg class="unruly-chart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 3v18h18" stroke-width="2"></path>
-                                <rect class="bar bar-1" x="7" y="12" width="4" height="6" fill="currentColor"></rect>
-                                <rect class="bar bar-2" x="12" y="9" width="4" height="9" fill="currentColor"></rect>
-                                <rect class="bar bar-3" x="17" y="6" width="4" height="12" fill="currentColor"></rect>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <g class="user-part">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="8.5" cy="7" r="4"/>
+                                </g>
+                                <g class="minus-part">
+                                    <line x1="23" y1="11" x2="17" y2="11"/>
+                                </g>
                             </svg>
                         </div>
                         <h3 data-lang-key="index_pain2_h3">לידים קרים, הזדמנויות אבודות</h3>
                         <p data-lang-key="index_pain2_p">פניות מפוזרות בין מיילים, וואטסאפ ופתקים? כל ליד שלא מקבל מענה מיידי הוא לקוח פוטנציאלי שהולך למתחרים. אתם פשוט משאירים כסף על הרצפה.</p>
                     </div>
-                    <div class="point-card fade-in" style="transition-delay: 0.4s;">
+                    <div class="point-card">
                         <div class="icon-container">
-                            <svg class="insight-morph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <g class="icon-part question-part"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3v0"></path><path d="M12 17h.01"></path></g>
-                                <g class="icon-part graph-part"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></g>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <g class="question-mark">
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                </g>
                             </svg>
                         </div>
                         <h3 data-lang-key="index_pain3_h3">מנחשים במקום לדעת</h3>
