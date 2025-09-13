@@ -141,6 +141,94 @@ header.scrolled {
     color: var(--text-color);
 }
 
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 15px;
+    direction: ltr; /* Keep visual order LTR: EN, switch, HE */
+}
+
+.language-switcher .lang-option {
+    font-weight: 600;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.4s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 0.9rem;
+}
+
+.language-switcher .lang-option.active {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy effect */
+  z-index: 2;
+  border-radius: 50%;
+}
+
+/* Wipe animation pseudo-element */
+.slider:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--primary-gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 1;
+}
+
+input:checked + .slider:after {
+    transform: scaleX(1);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px) rotate(360deg);
+}
+
+/* --- Language Switcher Position --- */
+[dir="ltr"] .navbar .language-switcher {
+    order: 5; /* High number to push it to the end in LTR mode */
+}
+
 /* --- Hero Section --- */
 .hero {
     padding: 100px 0;

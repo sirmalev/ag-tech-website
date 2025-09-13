@@ -15,41 +15,49 @@
 <body>
     <header>
         <div class="container navbar">
+            <div class="language-switcher">
+                <span class="lang-option active" data-lang="he">עב</span>
+                <label class="switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-option" data-lang="en">EN</span>
+            </div>
             <a href="/index.html" class="logo"><img src="/assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/about.html">אודות</a></li>
-                    <li><a href="/index.html#process">התהליך שלנו</a></li>
-                    <li><a href="/blog">מאמרים</a></li>
-                    <li><a href="/index.html#contact">צור קשר</a></li>
+                    <li><a href="/about.html" data-lang-key="nav_about">אודות</a></li>
+                    <li><a href="/index.html#process" data-lang-key="nav_process">התהליך שלנו</a></li>
+                    <li><a href="/blog" data-lang-key="nav_articles">מאמרים</a></li>
+                    <li><a href="/index.html#contact" data-lang-key="nav_contact">צור קשר</a></li>
                 </ul>
             </nav>
-            <a href="/index.html#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+            <a href="/index.html#contact" class="btn btn-primary" data-lang-key="cta_button">קבעו פגישת אבחון</a>
         </div>
     </header>
 
     <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
-        <h1>הצהרת נגישות</h1>
-        <p><em>תאריך עדכון אחרון: 3 בספטמבר 2025</em></p>
+        <h1 data-lang-key="access_title">הצהרת נגישות</h1>
+        <p data-lang-key="access_last_updated"><em>תאריך עדכון אחרון: 3 בספטמבר 2025</em></p>
 
-        <h2>התחייבותנו לנגישות</h2>
-        <p>
+        <h2 data-lang-key="access_commitment_h2">התחייבותנו לנגישות</h2>
+        <p data-lang-key="access_commitment_p">
             אנו רואים חשיבות עליונה בהנגשת אתר האינטרנט שלנו לאנשים עם מוגבלויות, על מנת לאפשר לכלל האוכלוסייה, לרבות אנשים עם מוגבלויות, לגלוש באתר בקלות ובנוחות. האתר נבנה בהתאם להוראות חוק שוויון זכויות לאנשים עם מוגבלות, התשנ"ח-1998, והתקנות שהותקנו מכוחו.
         </p>
 
-        <h2>רמת הנגישות באתר</h2>
-        <p>
+        <h2 data-lang-key="access_level_h2">רמת הנגישות באתר</h2>
+        <p data-lang-key="access_level_p">
             האתר הונגש לרמה AA על פי תקן WCAG 2.1. אנו משתמשים בטכנולוגיות המסייעות להנגשת האתר, ובין היתר בוצעו ההתאמות הבאות:
         </p>
         <ul>
-            <li><strong>ניווט:</strong> האתר ניתן לניווט מלא באמצעות המקלדת.</li>
-            <li><strong>קוראי מסך:</strong> האתר מותאם לשימוש עם תוכנות קוראות מסך.</li>
-            <li><strong>תצוגה:</strong> האתר מאפשר שינוי גודל הגופן, והצבעים נבחרו בקפידה כדי להבטיח ניגודיות נאותה.</li>
-            <li><strong>מבנה:</strong> האתר בעל מבנה סמנטי ברור עם כותרות, רשימות ופסקאות.</li>
+            <li><strong data-lang-key="access_level_li1_strong">ניווט:</strong><span data-lang-key="access_level_li1_text"> האתר ניתן לניווט מלא באמצעות המקלדת.</span></li>
+            <li><strong data-lang-key="access_level_li2_strong">קוראי מסך:</strong><span data-lang-key="access_level_li2_text"> האתר מותאם לשימוש עם תוכנות קוראות מסך.</span></li>
+            <li><strong data-lang-key="access_level_li3_strong">תצוגה:</strong><span data-lang-key="access_level_li3_text"> האתר מאפשר שינוי גודל הגופן, והצבעים נבחרו בקפידה כדי להבטיח ניגודיות נאותה.</span></li>
+            <li><strong data-lang-key="access_level_li4_strong">מבנה:</strong><span data-lang-key="access_level_li4_text"> האתר בעל מבנה סמנטי ברור עם כותרות, רשימות ופסקאות.</span></li>
         </ul>
 
-        <h2>יצירת קשר</h2>
-        <p>
+        <h2 data-lang-key="access_contact_h2">יצירת קשר</h2>
+        <p data-lang-key="access_contact_p">
             אנו ממשיכים להשקיע מאמצים בשיפור נגישות האתר. אם נתקלתם בבעיית נגישות או יש לכם הצעה לשיפור, נשמח לשמוע מכם. ניתן ליצור קשר באמצעות דוא"ל: info.about.help@gmail.com.
         </p>
     </main>
@@ -57,8 +65,8 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 AG Technology. כל הזכויות שמורות.</p>
-                <p><a href="/about.html">אודות</a> | <a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
+                <p data-lang-key="footer_copyright">© 2025 AG Technology. כל הזכויות שמורות.</p>
+                <p><a href="/about.html" data-lang-key="footer_about_link">אודות</a> | <a href="/privacy-policy.html" data-lang-key="footer_privacy">מדיניות פרטיות</a> | <a href="/cookie-policy.html" data-lang-key="footer_cookies">מדיניות עוגיות</a> | <a href="/accessibility-statement.html" data-lang-key="footer_accessibility">הצהרת נגישות</a></p>
             </div>
         </div>
     </footer>
@@ -66,5 +74,6 @@
     <script src="main.js"></script>
     <script src="accessibility.js"></script>
     <script type="module" src="cookie-consent.js"></script>
+    <script src="translation.js"></script>
 </body>
 </html>

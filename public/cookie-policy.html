@@ -16,54 +16,62 @@
 <body>
     <header>
         <div class="container navbar">
+            <div class="language-switcher">
+                <span class="lang-option active" data-lang="he">עב</span>
+                <label class="switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-option" data-lang="en">EN</span>
+            </div>
             <a href="/index.html" class="logo"><img src="/assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/about.html">אודות</a></li>
-                    <li><a href="/index.html#process">התהליך שלנו</a></li>
-                    <li><a href="/blog">מאמרים</a></li>
-                    <li><a href="/index.html#contact">צור קשר</a></li>
+                    <li><a href="/about.html" data-lang-key="nav_about">אודות</a></li>
+                    <li><a href="/index.html#process" data-lang-key="nav_process">התהליך שלנו</a></li>
+                    <li><a href="/blog" data-lang-key="nav_articles">מאמרים</a></li>
+                    <li><a href="/index.html#contact" data-lang-key="nav_contact">צור קשר</a></li>
                 </ul>
             </nav>
-            <a href="/index.html#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+            <a href="/index.html#contact" class="btn btn-primary" data-lang-key="cta_button">קבעו פגישת אבחון</a>
         </div>
     </header>
 
     <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
-        <h1>מדיניות עוגיות</h1>
-        <p><em>תאריך עדכון אחרון: 29 באוגוסט 2025</em></p>
+        <h1 data-lang-key="cookies_title">מדיניות עוגיות</h1>
+        <p data-lang-key="cookies_last_updated"><em>תאריך עדכון אחרון: 29 באוגוסט 2025</em></p>
 
-        <h2>מהן עוגיות?</h2>
-        <p>
+        <h2 data-lang-key="cookies_what_h2">מהן עוגיות?</h2>
+        <p data-lang-key="cookies_what_p">
             עוגיות הן קבצי טקסט קטנים המאוחסנים בדפדפן שלך על ידי אתרי אינטרנט שבהם אתה מבקר. הם מכילים מידע על הגלישה שלך באתרים אלה. קובצי Cookie יכולים לשמש למגוון רחב של מטרות, כגון זיהויך בעת חזרתך לאתר, זכירת העדפותיך והצגת תוכן מותאם אישית.
         </p>
 
-        <h2>כיצד אנו משתמשים בעוגיות</h2>
-        <p>
+        <h2 data-lang-key="cookies_how_h2">כיצד אנו משתמשים בעוגיות</h2>
+        <p data-lang-key="cookies_how_p">
             אנו משתמשים בעוגיות כדי לשפר את חוויתך באתר שלנו. אנו משתמשים בסוגים הבאים של עוגיות:
         </p>
         <ul>
             <li>
-                <strong>עוגיות חיוניות:</strong> עוגיות אלה נחוצות לתפקודו התקין של האתר. הן מאפשרות לך לנווט באתר ולהשתמש בתכונותיו הבסיסיות. ללא עוגיות אלה, שירותים מסוימים לא יהיו זמינים.
+                <strong data-lang-key="cookies_how_li1_strong">עוגיות חיוניות:</strong><span data-lang-key="cookies_how_li1_text"> עוגיות אלה נחוצות לתפקודו התקין של האתר. הן מאפשרות לך לנווט באתר ולהשתמש בתכונותיו הבסיסיות. ללא עוגיות אלה, שירותים מסוימים לא יהיו זמינים.</span>
             </li>
             <li>
-                <strong>עוגיות ביצועים ואנליטיקה:</strong> עוגיות אלה אוספות מידע על האופן שבו מבקרים משתמשים באתר שלנו, למשל, אילו דפים הם מבקרים בתדירות הגבוהה ביותר. מידע זה משמש אותנו לשיפור האתר והשירותים שלנו.
+                <strong data-lang-key="cookies_how_li2_strong">עוגיות ביצועים ואנליטיקה:</strong><span data-lang-key="cookies_how_li2_text"> עוגיות אלה אוספות מידע על האופן שבו מבקרים משתמשים באתר שלנו, למשל, אילו דפים הם מבקרים בתדירות הגבוהה ביותר. מידע זה משמש אותנו לשיפור האתר והשירותים שלנו.</span>
             </li>
             <li>
-                <strong>עוגיות פונקציונליות:</strong> עוגיות אלה מאפשרות לאתר לזכור את הבחירות שביצעת (כגון שם משתמש, שפה או אזור) ולספק תכונות משופרות ומותאמות אישית יותר.
+                <strong data-lang-key="cookies_how_li3_strong">עוגיות פונקציונליות:</strong><span data-lang-key="cookies_how_li3_text"> עוגיות אלה מאפשרות לאתר לזכור את הבחירות שביצעת (כגון שם משתמש, שפה או אזור) ולספק תכונות משופרות ומותאמות אישית יותר.</span>
             </li>
             <li>
-                <strong>עוגיות פרסום:</strong> עוגיות אלה משמשות להצגת מודעות רלוונטיות יותר עבורך ועבור תחומי העניין שלך. הן משמשות גם להגבלת מספר הפעמים שאתה רואה מודעה ולמדידת יעילות מסעות פרסום.
+                <strong data-lang-key="cookies_how_li4_strong">עוגיות פרסום:</strong><span data-lang-key="cookies_how_li4_text"> עוגיות אלה משמשות להצגת מודעות רלוונטיות יותר עבורך ועבור תחומי העניין שלך. הן משמשות גם להגבלת מספר הפעמים שאתה רואה מודעה ולמדידת יעילות מסעות פרסום.</span>
             </li>
         </ul>
 
-        <h2>הבחירות שלך לגבי עוגיות</h2>
-        <p>
+        <h2 data-lang-key="cookies_choices_h2">הבחירות שלך לגבי עוגיות</h2>
+        <p data-lang-key="cookies_choices_p">
             בעת ביקורך הראשון באתר, תוצג בפניך האפשרות לקבל או לדחות את השימוש בעוגיות שאינן חיוניות. תוכל לשנות את העדפותיך בכל עת. בנוסף, רוב הדפדפנים מאפשרים לך לשלוט בעוגיות דרך הגדרות הדפדפן.
         </p>
 
-        <h2>יצירת קשר</h2>
-        <p>
+        <h2 data-lang-key="cookies_contact_h2">יצירת קשר</h2>
+        <p data-lang-key="cookies_contact_p">
             אם יש לך שאלות או הערות לגבי מדיניות עוגיות זו, אנא צור איתנו קשר בכתובת: info.about.help@gmail.com.
         </p>
     </main>
@@ -71,8 +79,8 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 AG Technology. כל הזכויות שמורות.</p>
-                <p><a href="/about.html">אודות</a> | <a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
+                <p data-lang-key="footer_copyright">© 2025 AG Technology. כל הזכויות שמורות.</p>
+                <p><a href="/about.html" data-lang-key="footer_about_link">אודות</a> | <a href="/privacy-policy.html" data-lang-key="footer_privacy">מדיניות פרטיות</a> | <a href="/cookie-policy.html" data-lang-key="footer_cookies">מדיניות עוגיות</a> | <a href="/accessibility-statement.html" data-lang-key="footer_accessibility">הצהרת נגישות</a></p>
             </div>
         </div>
     </footer>
@@ -80,5 +88,6 @@
     <script src="main.js"></script>
     <script src="accessibility.js"></script>
     <script type="module" src="cookie-consent.js"></script>
+    <script src="translation.js"></script>
 </body>
 </html>

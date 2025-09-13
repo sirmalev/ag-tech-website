@@ -22,146 +22,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* --- CSS for New Interactive Icons --- */
-        /* General hover effect for the container */
-        .point-card .icon-container {
-            transition: transform 0.3s ease;
-        }
-        .point-card:hover .icon-container {
-            transform: scale(1.05);
-        }
-        .point-card .icon-container svg {
-            overflow: visible; /* Important for some animations */
-        }
-
-        /* Icon 1: Chaotic Clock */
-        .chaotic-clock .clock-hand {
-            transform-origin: 50% 50%;
-            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        .chaotic-clock .hour-hand {
-            /* Starts a bit slower */
-            animation: spin-hour 3s linear infinite;
-        }
-        .chaotic-clock .minute-hand {
-            /* Starts faster and more chaotic */
-            animation: spin-minute 1.2s linear infinite;
-        }
-        .point-card:hover .chaotic-clock .hour-hand {
-            animation: none;
-            transform: rotate(90deg); /* Points to 3 */
-        }
-        .point-card:hover .chaotic-clock .minute-hand {
-            animation: none;
-            transform: rotate(180deg); /* Points to 6 */
-        }
-        @keyframes spin-hour { to { transform: rotate(360deg); } }
-        @keyframes spin-minute { to { transform: rotate(1080deg); } }
-
-        /* Icon 2: Unruly Chart */
-        .unruly-chart .bar {
-            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1); /* Bouncy transition */
-            transform-origin: bottom;
-        }
-        /* Initial chaotic state */
-        .unruly-chart .bar-1 { transform: scaleY(0.5) rotate(4deg); }
-        .unruly-chart .bar-2 { transform: scaleY(0.7) rotate(-6deg); }
-        .unruly-chart .bar-3 { transform: scaleY(0.4) rotate(5deg); }
-        /* Hover state - organized and grown */
-        .point-card:hover .unruly-chart .bar {
-            transform: scaleY(1) rotate(0deg);
-        }
-
-        /* Icon 3: From Guesswork to Clarity */
-        .insight-morph .icon-part {
-            transition: opacity 0.4s ease-in-out, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        .insight-morph .graph-part { opacity: 0; transform: translateY(8px) scale(0.8); }
-        .point-card:hover .insight-morph .question-part { opacity: 0; transform: translateY(-8px) scale(0.8); }
-        .point-card:hover .insight-morph .graph-part { opacity: 1; transform: translateY(0) scale(1); }
-
-        /* --- CSS for Step 2 Service Icons --- */
-        .service-item .icon-container {
-            animation: none; /* Override old float animation */
-            transition: transform 0.3s ease;
-        }
-        .service-item:hover .icon-container {
-            transform: scale(1.1);
-        }
-
-        /* 1. CRM Network Icon */
-        .crm-network .add-mark {
-            transform-origin: center;
-            transform: scale(0) rotate(-90deg);
-            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        .service-item:hover .crm-network .add-mark {
-            transform: scale(1) rotate(0deg);
-        }
-
-        /* 2. Automation Gears Icon */
-        .automation-gears {
-            transform-origin: center;
-            transition: transform 1s ease-in-out;
-        }
-        .service-item:hover .automation-gears {
-            transform: rotate(180deg);
-        }
-
-        /* 3. Smart Dashboard Icon - Pie Chart */
-        .smart-pie-chart .pie-segment {
-            transform-origin: center;
-            stroke-dashoffset: 57; /* Approx Circumference */
-            transition: stroke-dashoffset 0.8s cubic-bezier(0.45, 0, 0.55, 1);
-        }
-        .smart-pie-chart .segment-1 {
-            stroke: var(--primary-color);
-            stroke-dasharray: 25 57;
-        }
-        .smart-pie-chart .segment-2 {
-            stroke: #a07ff3; /* Lighter shade */
-            stroke-dasharray: 18 57;
-            transition-delay: 0.2s; /* Stagger the animation */
-        }
-        /* Hover state - segments draw themselves */
-        .service-item:hover .smart-pie-chart .pie-segment {
-            stroke-dashoffset: 0;
-        }
-        /* 4. System Integration Icon */
-        .integration-link .link-part {
-            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        .integration-link .link-1 { transform: translate(3px, -3px); }
-        .integration-link .link-2 { transform: translate(-3px, 3px); }
-        .service-item:hover .integration-link .link-part {
-            transform: translate(0, 0);
-        }
-
-        /* 5. AI Chatbot Icon */
-        .ai-chatbot .typing-dots, .ai-chatbot .ai-sparkle {
-            transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        .ai-chatbot .typing-dots circle {
-            animation: typing-fade 1.5s infinite;
-            opacity: 0;
-        }
-        .ai-chatbot .typing-dots circle:nth-child(2) { animation-delay: 0.25s; }
-        .ai-chatbot .typing-dots circle:nth-child(3) { animation-delay: 0.5s; }
-        @keyframes typing-fade {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-        .ai-chatbot .ai-sparkle {
-            opacity: 0;
-            transform-origin: center;
-            transform: scale(0.5) rotate(-45deg);
-        }
-        .service-item:hover .ai-chatbot .typing-dots { opacity: 0; transform: scale(0.7); }
-        .service-item:hover .ai-chatbot .ai-sparkle {
-            opacity: 1; transform: scale(1) rotate(0deg);
-        }
-    </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
@@ -202,17 +62,25 @@
 
     <header>
         <div class="container navbar">
+            <div class="language-switcher">
+                <span class="lang-option active" data-lang="he">עב</span>
+                <label class="switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-option" data-lang="en">EN</span>
+            </div>
             <a href="/index.html" class="logo"><img src="assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="about.html">אודות</a></li>
-                    <li><a href="#process">התהליך שלנו</a></li>
-                    <li><a href="#calculator">מחשבון חיסכון</a></li>
-                    <li><a href="/blog">מאמרים</a></li>
-                    <li><a href="#contact">צור קשר</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">אודות</a></li>
+                    <li><a href="#process" data-lang-key="nav_process">התהליך שלנו</a></li>
+                    <li><a href="#calculator" data-lang-key="nav_calculator">מחשבון חיסכון</a></li>
+                    <li><a href="/blog" data-lang-key="nav_articles">מאמרים</a></li>
+                    <li><a href="#contact" data-lang-key="nav_contact">צור קשר</a></li>
                 </ul>
             </nav>
-            <a href="#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+            <a href="#contact" class="btn btn-primary" data-lang-key="cta_button">קבעו פגישת אבחון</a>
         </div>
     </header>
 
@@ -220,16 +88,16 @@
         <section class="hero">
             <canvas id="hero-canvas"></canvas>
             <div class="container">
-                <h1 class="fade-in">הכאוס בעסק שלכם הוא הזדמנות.<br>אנחנו נהפוך אותו ל<span class="highlight">מנוע צמיחה אוטומטי.</span></h1>
-                <p class="fade-in" style="transition-delay: 0.2s;">אנחנו ממפים תהליכים ידניים ובזבוז זמן, בונים מערכות AI ואוטומציה חכמות, ומשחררים אתכם להתמקד במה שחשוב באמת: להצמיח את העסק.</p>
-                <a href="#contact" class="btn btn-primary fade-in" style="transition-delay: 0.4s;">כן, אני רוצה להפוך כאוס לסדר (אבחון חינם)</a>
+                <h1 class="fade-in" data-lang-key="index_hero_h1">הכאוס בעסק שלכם הוא הזדמנות.<br>אנחנו נהפוך אותו ל<span class="highlight">מנוע צמיחה אוטומטי.</span></h1>
+                <p class="fade-in" style="transition-delay: 0.2s;" data-lang-key="index_hero_p">אנחנו ממפים תהליכים ידניים ובזבוז זמן, בונים מערכות AI ואוטומציה חכמות, ומשחררים אתכם להתמקד במה שחשוב באמת: להצמיח את העסק.</p>
+                <a href="#contact" class="btn btn-primary fade-in" style="transition-delay: 0.4s;" data-lang-key="index_hero_cta">כן, אני רוצה להפוך כאוס לסדר (אבחון חינם)</a>
             </div>
         </section>
 
         <section class="pain-points">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>נשמע מוכר? אם כן, אתם מאבדים כסף בכל רגע.</h2>
+                    <h2 data-lang-key="index_pain_h2">נשמע מוכר? אם כן, אתם מאבדים כסף בכל רגע.</h2>
                 </div>
                 <div class="points-grid">
                     <div class="point-card fade-in">
@@ -240,8 +108,8 @@
                                 <line class="clock-hand minute-hand" x1="12" y1="12" x2="16" y2="12"></line>
                             </svg>
                         </div>
-                        <h3>שעות "שרופות", אפס התקדמות</h3>
-                        <p>אתם והצוות שלכם מבזבזים שעות על משימות שחוזרות על עצמן? עדכון אקסלים, העתקת נתונים, שליחת מיילים... זה זמן יקר שאפשר להשקיע בצמיחה.</p>
+                        <h3 data-lang-key="index_pain1_h3">שעות "שרופות", אפס התקדמות</h3>
+                        <p data-lang-key="index_pain1_p">אתם והצוות שלכם מבזבזים שעות על משימות שחוזרות על עצמן? עדכון אקסלים, העתקת נתונים, שליחת מיילים... זה זמן יקר שאפשר להשקיע בצמיחה.</p>
                     </div>
                     <div class="point-card fade-in" style="transition-delay: 0.2s;">
                         <div class="icon-container">
@@ -252,8 +120,8 @@
                                 <rect class="bar bar-3" x="17" y="6" width="4" height="12" fill="currentColor"></rect>
                             </svg>
                         </div>
-                        <h3>לידים קרים, הזדמנויות אבודות</h3>
-                        <p>פניות מפוזרות בין מיילים, וואטסאפ ופתקים? כל ליד שלא מקבל מענה מיידי הוא לקוח פוטנציאלי שהולך למתחרים. אתם פשוט משאירים כסף על הרצפה.</p>
+                        <h3 data-lang-key="index_pain2_h3">לידים קרים, הזדמנויות אבודות</h3>
+                        <p data-lang-key="index_pain2_p">פניות מפוזרות בין מיילים, וואטסאפ ופתקים? כל ליד שלא מקבל מענה מיידי הוא לקוח פוטנציאלי שהולך למתחרים. אתם פשוט משאירים כסף על הרצפה.</p>
                     </div>
                     <div class="point-card fade-in" style="transition-delay: 0.4s;">
                         <div class="icon-container">
@@ -262,8 +130,8 @@
                                 <g class="icon-part graph-part"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></g>
                             </svg>
                         </div>
-                        <h3>מנחשים במקום לדעת</h3>
-                        <p>בלי דאטה, אתם טסים על עיוור. איזה קמפיין עובד? מה ה-ROI האמיתי? החלטות שמבוססות על "תחושת בטן" הן הימור יקר מדי לעסק שלכם.</p>
+                        <h3 data-lang-key="index_pain3_h3">מנחשים במקום לדעת</h3>
+                        <p data-lang-key="index_pain3_p">בלי דאטה, אתם טסים על עיוור. איזה קמפיין עובד? מה ה-ROI האמיתי? החלטות שמבוססות על "תחושת בטן" הן הימור יקר מדי לעסק שלכם.</p>
                     </div>
                 </div>
             </div>
@@ -272,9 +140,9 @@
         <section class="about-section">
             <div class="container fade-in">
                 <div class="about-content">
-                    <h2>אנחנו לא עוד "חברת תוכנה". אנחנו שותפים טכנולוגיים לצמיחה.</h2>
-                    <p>הבנו שטכנולוגיה היא לא המטרה, היא הכלי. המומחיות שלנו היא לצלול ל-DNA של העסק שלכם, להבין את התהליכים לעומק, ולתכנן פתרון מדויק שמשלב אוטומציה, AI ואינטגרציות חכמות כדי לפתור את צווארי הבקבוק האמיתיים שלכם. אנחנו הופכים את המכונה העסקית שלכם ליעילה, רווחית, וכזו שדורשת מכם פחות עבודה ידנית.</p>
-                    <p><strong>המשימה שלנו היא לשחרר אתכם מהעבודה השחורה, כדי שתוכלו להתמקד במה שרק אתם יודעים לעשות: לחשוב אסטרטגית, לחדש, ולבנות קשרים עם הלקוחות.</strong></p>
+                    <h2 data-lang-key="index_about_h2">אנחנו לא עוד "חברת תוכנה". אנחנו שותפים טכנולוגיים לצמיחה.</h2>
+                    <p data-lang-key="index_about_p1">הבנו שטכנולוגיה היא לא המטרה, היא הכלי. המומחיות שלנו היא לצלול ל-DNA של העסק שלכם, להבין את התהליכים לעומק, ולתכנן פתרון מדויק שמשלב אוטומציה, AI ואינטגרציות חכמות כדי לפתור את צווארי הבקבוק האמיתיים שלכם. אנחנו הופכים את המכונה העסקית שלכם ליעילה, רווחית, וכזו שדורשת מכם פחות עבודה ידנית.</p>
+                    <p data-lang-key="index_about_p2"><strong>המשימה שלנו היא לשחרר אתכם מהעבודה השחורה, כדי שתוכלו להתמקד במה שרק אתם יודעים לעשות: לחשוב אסטרטגית, לחדש, ולבנות קשרים עם הלקוחות.</strong></p>
                 </div>
             </div>
         </section>
@@ -282,19 +150,19 @@
         <section id="process" class="process-section">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>המתודולוגיה שלנו: מאבחון כירורגי לפתרון שמייצר רווח</h2>
-                    <p>תהליך מוכח בשני שלבים שמבטיח פתרון מדויק לצרכים שלכם, ולא "פתרון מדף".</p>
+                    <h2 data-lang-key="index_process_h2">המתודולוגיה שלנו: מאבחון כירורגי לפתרון שמייצר רווח</h2>
+                    <p data-lang-key="index_process_p">תהליך מוכח בשני שלבים שמבטיח פתרון מדויק לצרכים שלכם, ולא "פתרון מדף".</p>
                 </div>
                 <div class="process-steps">
                     <div class="step-card fade-in">
                         <div class="step-number">שלב 1</div>
-                        <h3>אבחון 360° (ללא עלות)</h3>
-                        <p>בשיחת עבודה ממוקדת, אנחנו לא מוכרים - אנחנו מאבחנים. נמפה יחד את התהליכים בעסק, נזהה את נקודות הכשל שגורמות לבזבוז זמן וכסף, ונגבש תוכנית פעולה עם "הזדמנויות זהב" לאוטומציה בעלת החזר השקעה מהיר.</p>
+                        <h3 data-lang-key="index_step1_h3">אבחון 360° (ללא עלות)</h3>
+                        <p data-lang-key="index_step1_p">בשיחת עבודה ממוקדת, אנחנו לא מוכרים - אנחנו מאבחנים. נמפה יחד את התהליכים בעסק, נזהה את נקודות הכשל שגורמות לבזבוז זמן וכסף, ונגבש תוכנית פעולה עם "הזדמנויות זהב" לאוטומציה בעלת החזר השקעה מהיר.</p>
                     </div>
                     <div class="step-card fade-in" style="transition-delay: 0.2s;">
                         <div class="step-number">שלב 2</div>
-                        <h3>בנייה, הטמעה וליווי צמוד</h3>
-                        <p>בהתבסס על האבחון, אנחנו בונים ומטמיעים את המערכת המדויקת שהעסק שלכם צריך. זה כולל הקמת מערכות CRM, אוטומציה של תהליכים, אינטגרציה בין מערכות, הטמעת AI וצ'אטבוטים, ובניית דאשבורדים חכמים. התוצאה: מערכת אחת, מסונכרנת, שעובדת בשבילכם 24/7.</p>
+                        <h3 data-lang-key="index_step2_h3">בנייה, הטמעה וליווי צמוד</h3>
+                        <p data-lang-key="index_step2_p">בהתבסס על האבחון, אנחנו בונים ומטמיעים את המערכת המדויקת שהעסק שלכם צריך. זה כולל הקמת מערכות CRM, אוטומציה של תהליכים, אינטגרציה בין מערכות, הטמעת AI וצ'אטבוטים, ובניית דאשבורדים חכמים. התוצאה: מערכת אחת, מסונכרנת, שעובדת בשבילכם 24/7.</p>
                         <div class="services-grid">
                             <div class="service-item">
                                 <div class="icon-container">
@@ -302,12 +170,12 @@
                                         <g class="user-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle></g>
                                         <g class="add-mark"><line x1="18" y1="8" x2="18" y2="14"></line><line x1="15" y1="11" x2="21" y2="11"></line></g>
                                     </svg>
-                                </div><span>מערכות CRM וניהול</span>
+                                </div><span data-lang-key="index_service_crm">מערכות CRM וניהול</span>
                             </div>
                             <div class="service-item">
                                 <div class="icon-container">
                                     <svg class="automation-gears" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                                </div><span>אוטומציה לתהליכים</span>
+                                </div><span data-lang-key="index_service_automation">אוטומציה לתהליכים</span>
                             </div>
                             <div class="service-item">
                                 <div class="icon-container">
@@ -316,7 +184,7 @@
                                         <g transform="rotate(-90 12 12)"><circle class="pie-segment segment-1" cx="12" cy="12" r="9"></circle></g>
                                         <g transform="rotate(65 12 12)"><circle class="pie-segment segment-2" cx="12" cy="12" r="9"></circle></g>
                                     </svg>
-                                </div><span>דאשבורדים חכמים</span>
+                                </div><span data-lang-key="index_service_dashboards">דאשבורדים חכמים</span>
                             </div>
                             <div class="service-item">
                                 <div class="icon-container">
@@ -324,7 +192,7 @@
                                         <g class="link-part link-1"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path></g>
                                         <g class="link-part link-2"><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></g>
                                     </svg>
-                                </div><span>אינטגרציה בין מערכות</span>
+                                </div><span data-lang-key="index_service_integration">אינטגרציה בין מערכות</span>
                             </div>
                             <div class="service-item">
                                 <div class="icon-container">
@@ -336,7 +204,7 @@
                                         <g class="ai-sparkle"><path d="M12 6l1.2 2.8L16 10l-2.8 1.2L12 14l-1.2-2.8L8 10l2.8-1.2L12 6z" fill="currentColor" stroke="none"></path></g>
                                     </svg>
                                 </div>
-                                <span>צ'אטבוטים עם AI</span>
+                                <span data-lang-key="index_service_chatbots">צ'אטבוטים עם AI</span>
                             </div>
                         </div>
                     </div>
@@ -346,28 +214,28 @@
 
         <section id="calculator" class="roi-calculator-section container fade-in">
             <div class="roi-calculator">
-                <h2>כמה כסף העסק שלכם יכול לחסוך בשנה?</h2>
-                <p>הזינו 3 נתונים וגלו את פוטנציאל החיסכון המיידי שלכם מאוטומציה.</p>
+                <h2 data-lang-key="index_calculator_h2">כמה כסף העסק שלכם יכול לחסוך בשנה?</h2>
+                <p data-lang-key="index_calculator_p">הזינו 3 נתונים וגלו את פוטנציאל החיסכון המיידי שלכם מאוטומציה.</p>
                 <div class="calculator-inputs">
                     <div class="input-group">
-                        <label for="employees">מספר עובדים במשימות ידניות</label>
+                        <label for="employees" data-lang-key="index_calculator_employees">מספר עובדים במשימות ידניות</label>
                         <input type="number" id="employees" value="5">
                     </div>
                     <div class="input-group">
-                        <label for="hours">שעות שבועיות מבוזבזות (לעובד)</label>
+                        <label for="hours" data-lang-key="index_calculator_hours">שעות שבועיות מבוזבזות (לעובד)</label>
                         <input type="number" id="hours" value="8">
                     </div>
                     <div class="input-group">
-                        <label for="cost">עלות שעת עבודה ממוצעת (בש"ח)</label>
+                        <label for="cost" data-lang-key="index_calculator_cost">עלות שעת עבודה ממוצעת (בש"ח)</label>
                         <input type="number" id="cost" value="80">
                     </div>
                 </div>
-                <button id="calculateBtn" class="btn btn-primary" style="margin-top: 30px; background: white; color: var(--primary-color);">חשב חיסכון שנתי</button>
+                <button id="calculateBtn" class="btn btn-primary" style="margin-top: 30px; background: white; color: var(--primary-color);" data-lang-key="index_calculator_button">חשב חיסכון שנתי</button>
                 <div id="result" class="calculator-result" style="display: none;">
-                    <p>חיסכון שנתי מוערך:<span id="savings"></span></p>
+                    <p><span data-lang-key="index_calculator_result">חיסכון שנתי מוערך:</span><span id="savings"></span></p>
                 </div>
                 <div id="calculator-cta-container" style="display: none; margin-top: 25px;">
-                    <a href="#contact" class="btn btn-primary">אני רוצה לממש את החיסכון הזה</a>
+                    <a href="#contact" class="btn btn-primary" data-lang-key="index_calculator_cta">אני רוצה לממש את החיסכון הזה</a>
                 </div>
             </div>
         </section>
@@ -375,7 +243,7 @@
         <section class="tech-logos-section">
             <div class="container fade-in">
                 <div class="section-header">
-                    <h2>הטכנולוגיות שמניעות אותנו</h2>
+                    <h2 data-lang-key="index_tech_h2">הטכנולוגיות שמניעות אותנו</h2>
                 </div>
                 <div class="logos-grid">
                     <!-- OpenAI Logo -->
@@ -393,24 +261,24 @@
 
         <section id="contact" class="contact-section">
             <div class="container fade-in">
-                <h2>הצעד הבא פשוט, והוא בחינם.</h2>
-                <p>בשיחת אבחון קצרה וללא התחייבות, נזהה יחד 3 הזדמנויות מיידיות לאוטומציה בעסק שלכם. תצאו מהשיחה עם תובנות ברורות וצעדים פרקטיים. השאירו פרטים ונתאם.</p>
+                <h2 data-lang-key="index_contact_h2">הצעד הבא פשוט, והוא בחינם.</h2>
+                <p data-lang-key="index_contact_p">בשיחת אבחון קצרה וללא התחייבות, נזהה יחד 3 הזדמנויות מיידיות לאוטומציה בעסק שלכם. תצאו מהשיחה עם תובנות ברורות וצעדים פרקטיים. השאירו פרטים ונתאם.</p>
                 <form id="contact-form">
                     <div class="form-grid">
                         <div class="input-group">
-                            <input type="text" id="client-name" placeholder="שם מלא" required>
+                            <input type="text" id="client-name" placeholder="שם מלא" required data-lang-key="contact_form_name_placeholder" data-lang-attr="placeholder">
                         </div>
                         <div class="input-group">
-                            <input type="tel" id="client-phone" placeholder="מספר טלפון" required>
+                            <input type="tel" id="client-phone" placeholder="מספר טלפון" required data-lang-key="contact_form_phone_placeholder" data-lang-attr="placeholder">
                         </div>
                     </div>
                     <div class="marketing-consent">
                         <input type="checkbox" id="marketing-consent" name="marketing-consent" required>
-                        <label for="marketing-consent">אני מאשר/ת קבלת תוכן שיווקי והצעות מהחברה.</label>
+                        <label for="marketing-consent" data-lang-key="contact_form_consent">אני מאשר/ת קבלת תוכן שיווקי והצעות מהחברה.</label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-submit">כן, אני רוצה שיחת אבחון חינם!</button>
+                    <button type="submit" class="btn btn-primary btn-submit" data-lang-key="index_contact_cta">כן, אני רוצה שיחת אבחון חינם!</button>
                 </form>
-                <p style="font-size: 0.9rem; margin-top: 20px; color: var(--text-secondary);">נמאס לכם לחכות? קבעו פגישה ישירות ביומן שלנו.</p>
+                <p style="font-size: 0.9rem; margin-top: 20px; color: var(--text-secondary);" data-lang-key="wait_or_schedule">נמאס לכם לחכות? קבעו פגישה ישירות ביומן שלנו.</p>
             </div>
         </section>
 
@@ -419,17 +287,17 @@
 
     <section class="blog-mention">
         <div class="container">
-            <h2>רוצים להעמיק?</h2>
-            <p>בקרו ב<a href="/blog">מרכז הידע שלנו</a> וגלו מאמרים מקצועיים על אוטומציה, AI, וצמיחה עסקית.</p>
+            <h2 data-lang-key="index_blog_h2">רוצים להעמיק?</h2>
+            <p data-lang-key="index_blog_p">בקרו ב<a href="/blog">מרכז הידע שלנו</a> וגלו מאמרים מקצועיים על אוטומציה, AI, וצמיחה עסקית.</p>
         </div>
     </section>
     
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 AG Technology. כל הזכויות שמורות. </p> 
-                <p><a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
-                <p><a href="/about.html">אודות</a></p>
+                <p data-lang-key="footer_copyright">© 2025 AG Technology. כל הזכויות שמורות. </p> 
+                <p><a href="/privacy-policy.html" data-lang-key="footer_privacy">מדיניות פרטיות</a> | <a href="/cookie-policy.html" data-lang-key="footer_cookies">מדיניות עוגיות</a> | <a href="/accessibility-statement.html" data-lang-key="footer_accessibility">הצהרת נגישות</a></p>
+                <p><a href="/about.html" data-lang-key="footer_about_link">אודות</a></p>
             </div>
         </div>
     </footer>
@@ -439,13 +307,13 @@
         </div>
         <div class="popup-content">
             <span class="close-popup">&times;</span>
-            <h2>תודה על פנייתך!</h2>
-            <p>ניצור איתך קשר ב-24 השעות הקרובות.</p>
+            <h2 data-lang-key="success_popup_title">תודה על פנייתך!</h2>
+            <p data-lang-key="success_popup_text">ניצור איתך קשר ב-24 השעות הקרובות.</p>
         </div>
     </div>
 
     <div id="cookie-consent-banner" class="cookie-consent-banner">
-        <p>
+        <p data-lang-key="cookie_banner_text">
             אנו משתמשים בקובצי Cookie כדי לשפר את חווית הגלישה שלכם.
             למידע נוסף, עיינו ב
             <a href="/privacy-policy.html" target="_blank">מדיניות הפרטיות</a>
@@ -453,8 +321,8 @@
             <a href="/cookie-policy.html" target="_blank">מדיניות העוגיות</a> שלנו.
         </p>
         <div class="cookie-consent-buttons">
-            <button id="accept-cookies" class="btn btn-primary">אשר</button>
-            <button id="reject-cookies" class="btn btn-secondary">דחה</button>
+            <button id="accept-cookies" class="btn btn-primary" data-lang-key="cookie_accept">אשר</button>
+            <button id="reject-cookies" class="btn btn-secondary" data-lang-key="cookie_reject">דחה</button>
         </div>
     </div>
 
@@ -462,6 +330,7 @@
     <script src="main.js"></script>
     <script src="accessibility.js" ></script>
     <script type="module" src="cookie-consent.js"></script>
+    <script src="translation.js"></script>
 
 </body>
 </html>

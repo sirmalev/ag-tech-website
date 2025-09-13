@@ -59,25 +59,33 @@
 
     <header>
         <div class="container navbar">
+            <div class="language-switcher">
+                <span class="lang-option active" data-lang="he">עב</span>
+                <label class="switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-option" data-lang="en">EN</span>
+            </div>
             <a href="/index.html" class="logo"><img src="assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="about.html">אודות</a></li>
-                    <li><a href="/index.html#process">התהליך שלנו</a></li>
-                    <li><a href="/index.html#calculator">מחשבון חיסכון</a></li>
-                    <li><a href="/blog">מאמרים</a></li>
-                    <li><a href="/index.html#contact">צור קשר</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">אודות</a></li>
+                    <li><a href="/index.html#process" data-lang-key="nav_process">התהליך שלנו</a></li>
+                    <li><a href="/index.html#calculator" data-lang-key="nav_calculator">מחשבון חיסכון</a></li>
+                    <li><a href="/blog" data-lang-key="nav_articles">מאמרים</a></li>
+                    <li><a href="/index.html#contact" data-lang-key="nav_contact">צור קשר</a></li>
                 </ul>
             </nav>
-            <a href="/index.html#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+            <a href="/index.html#contact" class="btn btn-primary" data-lang-key="cta_button">קבעו פגישת אבחון</a>
         </div>
     </header>
 
     <main>
         <section class="about-hero">
             <div class="container">
-                <h1 class="fade-in">מאחורי כל מערכת חכמה, עומדת הבנה עמוקה של הבעיות שלכם.</h1>
-                <p class="fade-in" style="transition-delay: 0.2s;">לא הקמנו את AG Technology כדי לבנות עוד תוכנה. הקמנו אותה מתוך אובססיה ליעילות ותשוקה אמיתית לראות עסקים כמו שלכם פורצים גבולות. אנחנו מאמינים שהטכנולוגיה הטובה ביותר היא זו שעובדת בשקט ברקע, ופשוט מאפשרת לכם לעשות יותר.</p>
+                <h1 class="fade-in" data-lang-key="about_hero_h1">מאחורי כל מערכת חכמה, עומדת הבנה עמוקה של הבעיות שלכם.</h1>
+                <p class="fade-in" style="transition-delay: 0.2s;" data-lang-key="about_hero_p">לא הקמנו את AG Technology כדי לבנות עוד תוכנה. הקמנו אותה מתוך אובססיה ליעילות ותשוקה אמיתית לראות עסקים כמו שלכם פורצים גבולות. אנחנו מאמינים שהטכנולוגיה הטובה ביותר היא זו שעובדת בשקט ברקע, ופשוט מאפשרת לכם לעשות יותר.</p>
             </div>
         </section>
 
@@ -87,8 +95,8 @@
                     <div class="icon-container">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" opacity=".3"/><path d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm1-10h-2v6h2v-6zm0-4h-2v2h2V6z"/></svg>
                     </div>
-                    <h2>המשימה שלנו: להפוך טכנולוגיית-על ליתרון התחרותי שלכם.</h2>
-                    <p>תאגידי ענק משקיעים מיליארדים באוטומציה ו-AI. אנחנו מאמינים שהכלים האלה לא צריכים להיות פריבילגיה של הגדולים בלבד. המשימה שלנו היא לזקק את הטכנולוגיות החזקות ביותר בעולם לפתרונות פרקטיים, נגישים ורווחיים לעסקים כמו שלכם, כדי שתוכלו להתחרות - ולנצח.</p>
+                    <h2 data-lang-key="about_mission_h2">המשימה שלנו: להפוך טכנולוגיית-על ליתרון התחרותי שלכם.</h2>
+                    <p data-lang-key="about_mission_p">תאגידי ענק משקיעים מיליארדים באוטומציה ו-AI. אנחנו מאמינים שהכלים האלה לא צריכים להיות פריבילגיה של הגדולים בלבד. המשימה שלנו היא לזקק את הטכנולוגיות החזקות ביותר בעולם לפתרונות פרקטיים, נגישים ורווחיים לעסקים כמו שלכם, כדי שתוכלו להתחרות - ולנצח.</p>
                 </div>
             </div>
         </section>
@@ -96,8 +104,8 @@
         <section class="unique-section">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>ה-DNA שלנו: 4 עקרונות שמבטיחים תוצאות</h2>
-                    <p>אנחנו לא עוד "חברת תוכנה". אנחנו שותפים טכנולוגיים לצמיחה. זו לא סיסמה, זו מתודולוגיית העבודה שלנו, שבנויה על 4 עקרונות יסוד.</p>
+                    <h2 data-lang-key="about_dna_h2">ה-DNA שלנו: 4 עקרונות שמבטיחים תוצאות</h2>
+                    <p data-lang-key="about_dna_p">אנחנו לא עוד "חברת תוכנה". אנחנו שותפים טכנולוגיים לצמיחה. זו לא סיסמה, זו מתודולוגיית העבודה שלנו, שבנויה על 4 עקרונות יסוד.</p>
                 </div>
                 <div class="unique-features-list">
                     <div class="feature-item fade-in">
@@ -109,8 +117,8 @@
                             </svg>
                         </div>
                         <div class="feature-content">
-                            <h3>אסטרטגיה לפני טכנולוגיה</h3>
-                            <p>השאלה הראשונה שלנו היא אף פעם לא "איזו טכנולוגיה להשתמש?", אלא "מה הבעיה העסקית שאנחנו פותרים?". אנחנו צוללים לעומק התהליכים שלכם כדי לתכנן פתרון שמייצר אימפקט אמיתי על השורה התחתונה, לא רק כדי להשתמש בגאדג'ט החדש והנוצץ.</p>
+                            <h3 data-lang-key="about_feature1_h3">אסטרטגיה לפני טכנולוגיה</h3>
+                            <p data-lang-key="about_feature1_p">השאלה הראשונה שלנו היא אף פעם לא "איזו טכנולוגיה להשתמש?", אלא "מה הבעיה העסקית שאנחנו פותרים?". אנחנו צוללים לעומק התהליכים שלכם כדי לתכנן פתרון שמייצר אימפקט אמיתי על השורה התחתונה, לא רק כדי להשתמש בגאדג'ט החדש והנוצץ.</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
@@ -121,8 +129,8 @@
                             </svg>
                         </div>
                         <div class="feature-content">
-                            <h3>שותפות אמיתית, לא "זבנג וגמרנו"</h3>
-                            <p>ההצלחה שלכם היא ההצלחה שלנו, פשוט כך. אנחנו לא נעלמים אחרי ההטמעה. אנחנו נשארים לצדכם כדי לוודא שהמערכת עובדת, לבצע אופטימיזציות, ולחשוב יחד על השלב הבא. אנחנו משקיעים בקשרים ארוכי טווח כי אנחנו יודעים שצמיחה היא מרתון, לא ספרינט.</p>
+                            <h3 data-lang-key="about_feature2_h3">שותפות אמיתית, לא "זבנג וגמרנו"</h3>
+                            <p data-lang-key="about_feature2_p">ההצלחה שלכם היא ההצלחה שלנו, פשוט כך. אנחנו לא נעלמים אחרי ההטמעה. אנחנו נשארים לצדכם כדי לוודא שהמערכת עובדת, לבצע אופטימיזציות, ולחשוב יחד על השלב הבא. אנחנו משקיעים בקשרים ארוכי טווח כי אנחנו יודעים שצמיחה היא מרתון, לא ספרינט.</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
@@ -136,8 +144,8 @@
                             </svg>
                         </div>
                         <div class="feature-content">
-                            <h3>פתרונות שנועדו לבני אדם</h3>
-                            <p>טכנולוגיה צריכה לשרת אנשים, לא להפך. אנחנו מתכננים מערכות עם חווית משתמש אינטואיטיבית, כך שההטמעה בצוות תהיה מהירה וחלקה. המטרה שלנו היא שהכלים החדשים ירגישו טבעיים מהרגע הראשון.</p>
+                            <h3 data-lang-key="about_feature3_h3">פתרונות שנועדו לבני אדם</h3>
+                            <p data-lang-key="about_feature3_p">טכנולוגיה צריכה לשרת אנשים, לא להפך. אנחנו מתכננים מערכות עם חווית משתמש אינטואיטיבית, כך שההטמעה בצוות תהיה מהירה וחלקה. המטרה שלנו היא שהכלים החדשים ירגישו טבעיים מהרגע הראשון.</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
@@ -148,8 +156,8 @@
                             </svg>
                         </div>
                         <div class="feature-content">
-                            <h3>ערך עסקי מוכח</h3>
-                            <p>אנחנו לא מאמינים בטכנולוגיה לשם הטכנולוגיה. כל פתרון שאנחנו בונים נמדד בערך שהוא מייצר לעסק שלך: חיסכון בעלויות, הגדלת מכירות, או שיפור דרמטי ביעילות. אם אי אפשר למדוד את זה, אנחנו לא עושים את זה.</p>
+                            <h3 data-lang-key="about_feature4_h3">ערך עסקי מוכח</h3>
+                            <p data-lang-key="about_feature4_p">אנחנו לא מאמינים בטכנולוגיה לשם הטכנולוגיה. כל פתרון שאנחנו בונים נמדד בערך שהוא מייצר לעסק שלך: חיסכון בעלויות, הגדלת מכירות, או שיפור דרמטי ביעילות. אם אי אפשר למדוד את זה, אנחנו לא עושים את זה.</p>
                         </div>
                     </div>
                 </div>
@@ -159,8 +167,8 @@
         <section class="team-section">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>הכוח המניע שלנו</h2>
-                    <p>הטכנולוגיה שלנו חכמה, אבל האנשים שלנו הם הסוד האמיתי. אנחנו צוות מגוון של אסטרטגים, מפתחים ומומחי אוטומציה שמאוחדים סביב מטרה אחת: לפצח את האתגרים שלכם.</p>
+                    <h2 data-lang-key="about_team_h2">הכוח המניע שלנו</h2>
+                    <p data-lang-key="about_team_p">הטכנולוגיה שלנו חכמה, אבל האנשים שלנו הם הסוד האמיתי. אנחנו צוות מגוון של אסטרטגים, מפתחים ומומחי אוטומציה שמאוחדים סביב מטרה אחת: לפצח את האתגרים שלכם.</p>
                 </div>
                 <div class="team-strengths-grid">
                     <div class="strength-card fade-in">
@@ -170,15 +178,15 @@
                                 <polygon class="compass-needle" points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
                             </svg>
                         </div>
-                        <h3>אסטרטגים עסקיים עם מקלדת</h3>
-                        <p>אנחנו לא רק "מפתחים". אנחנו מנתחים את ה-DNA של העסק שלכם, חושבים שלושה צעדים קדימה, ומתכננים פתרונות שלא רק פותרים את הבעיה של היום, אלא בונים לכם יתרון תחרותי לעתיד.</p>
+                        <h3 data-lang-key="about_strength1_h3">אסטרטגים עסקיים עם מקלדת</h3>
+                        <p data-lang-key="about_strength1_p">אנחנו לא רק "מפתחים". אנחנו מנתחים את ה-DNA של העסק שלכם, חושבים שלושה צעדים קדימה, ומתכננים פתרונות שלא רק פותרים את הבעיה של היום, אלא בונים לכם יתרון תחרותי לעתיד.</p>
                     </div>
                     <div class="strength-card fade-in" style="transition-delay: 0.2s;">
                         <div class="icon-container">
                             <svg class="detail-lightning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
                         </div>
-                        <h3>אובססיביים לפרטים הקטנים</h3>
-                        <p>השטן, וההצלחה, נמצאים בפרטים הקטנים. הצוות שלנו אובססיבי ליעילות, מכתיבת קוד נקי ועד לבניית תהליכים אוטומטיים שרצים ללא תקלות ועושים בדיוק את מה שהם צריכים לעשות.</p>
+                        <h3 data-lang-key="about_strength2_h3">אובססיביים לפרטים הקטנים</h3>
+                        <p data-lang-key="about_strength2_p">השטן, וההצלחה, נמצאים בפרטים הקטנים. הצוות שלנו אובססיבי ליעילות, מכתיבת קוד נקי ועד לבניית תהליכים אוטומטיים שרצים ללא תקלות ועושים בדיוק את מה שהם צריכים לעשות.</p>
                     </div>
                     <div class="strength-card fade-in" style="transition-delay: 0.4s;">
                         <div class="icon-container">
@@ -186,8 +194,8 @@
                                 <path class="user-path" d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle class="user-path" cx="8.5" cy="7" r="4"></circle><polyline class="success-check" points="17 11 19 13 23 9"></polyline>
                             </svg>
                         </div>
-                        <h3>מחויבות טוטאלית להצלחה שלכם</h3>
-                        <p>אנחנו לא רואים את הפרויקט שלכם כ"עוד לקוח". אנחנו רואים את היעדים שלכם והופכים אותם למשימה שלנו. הצוות שלנו הופך לחלק מהעסק שלכם, עם מחויבות מלאה להשגת התוצאות שהגדרנו יחד.</p>
+                        <h3 data-lang-key="about_strength3_h3">מחויבות טוטאלית להצלחה שלכם</h3>
+                        <p data-lang-key="about_strength3_p">אנחנו לא רואים את הפרויקט שלכם כ"עוד לקוח". אנחנו רואים את היעדים שלכם והופכים אותם למשימה שלנו. הצוות שלנו הופך לחלק מהעסק שלכם, עם מחויבות מלאה להשגת התוצאות שהגדרנו יחד.</p>
                     </div>
                 </div>
             </div>
@@ -196,7 +204,7 @@
         <section class="management-section" id="management">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>ההנהלה</h2>
+                    <h2 data-lang-key="about_management_h2">ההנהלה</h2>
                 </div>
                 <div class="management-grid">
                     <div class="management-card fade-in">
@@ -204,9 +212,9 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                         </div>
                         <div class="management-info">
-                            <h3>אלון מ.</h3>
-                            <p class="title">מייסד ומנכ"ל</p>
-                            <p class="bio">אלון, הנדסאי תוכנה בוגר הטכניון, משלב רקע טכנולוגי עם תשוקה לעולם העסקי כדי להוביל את החזון של AG Technology. הוא דוגל בגישה שטכנולוגיה היא אמצעי להשגת יעדים, ומתמחה בפיצוח אתגרים עסקיים מורכבים באמצעות פתרונות אוטומציה חכמים ופרקטיים.</p>
+                            <h3 data-lang-key="about_founder_name">אלון מ.</h3>
+                            <p class="title" data-lang-key="about_founder_title">מייסד ומנכ"ל</p>
+                            <p class="bio" data-lang-key="about_founder_bio">אלון, הנדסאי תוכנה בוגר הטכניון, משלב רקע טכנולוגי עם תשוקה לעולם העסקי כדי להוביל את החזון של AG Technology. הוא דוגל בגישה שטכנולוגיה היא אמצעי להשגת יעדים, ומתמחה בפיצוח אתגרים עסקיים מורכבים באמצעות פתרונות אוטומציה חכמים ופרקטיים.</p>
                             <div class="social-links">
                                 <a href="YOUR-LINKEDIN-PROFILE-URL" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn של אלון מ.">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -221,30 +229,30 @@
         <section class="game-section">
             <div class="container">
                 <div class="section-header fade-in">
-                    <h2>האם תספיקו לעמוד בקצב?</h2>
-                    <p>נסו להתמודד עם משימות ידניות תחת לחץ של זמן. לחצו על "התחל" ונסו "לסגור" כמה שיותר משימות ב-10 שניות.</p>
+                    <h2 data-lang-key="about_game_h2">האם תספיקו לעמוד בקצב?</h2>
+                    <p data-lang-key="about_game_p">נסו להתמודד עם משימות ידניות תחת לחץ של זמן. לחצו על "התחל" ונסו "לסגור" כמה שיותר משימות ב-10 שניות.</p>
                 </div>
                 <div class="game-container fade-in">
                     <div class="game-board" id="game-board">
                         <!-- Game holes will be generated by JS -->
                     </div>
                     <div class="game-controls">
-                        <button id="start-game-btn" class="btn btn-primary">התחל משחק</button>
+                        <button id="start-game-btn" class="btn btn-primary" data-lang-key="about_game_start_btn">התחל משחק</button>
                         <div class="game-stats">
                             <div class="stat">
-                                <span>זמן נותר</span>
+                                <span data-lang-key="about_game_time_left">זמן נותר</span>
                                 <span id="time-left">10</span>
                             </div>
                             <div class="stat">
-                                <span>משימות שבוצעו</span>
+                                <span data-lang-key="about_game_tasks_done">משימות שבוצעו</span>
                                 <span id="score">0</span>
                             </div>
                         </div>
                     </div>
                     <div id="game-end-message" class="game-end-message">
-                        <h3>נגמר הזמן! זה קשה, נכון?</h3>
-                        <p>לנסות לעשות הכל ידנית זה מתיש ולא יעיל. אבל יש דרך טובה יותר.</p>
-                        <button id="automate-btn" class="btn btn-primary">הפעל אוטומציה עם AG Tech</button>
+                        <h3 data-lang-key="about_game_end_h3">נגמר הזמן! זה קשה, נכון?</h3>
+                        <p data-lang-key="about_game_end_p">לנסות לעשות הכל ידנית זה מתיש ולא יעיל. אבל יש דרך טובה יותר.</p>
+                        <button id="automate-btn" class="btn btn-primary" data-lang-key="about_game_automate_btn">הפעל אוטומציה עם AG Tech</button>
                     </div>
                 </div>
             </div>
@@ -252,24 +260,24 @@
 
         <section id="contact" class="contact-section">
             <div class="container fade-in">
-                <h2>מוכנים להפסיק לבזבז זמן ולהתחיל לצמוח?</h2>
-                <p>השלב הראשון הוא שיחת אבחון קצרה איתנו, ללא עלות וללא התחייבות. <br>בשיחה נבין יחד איפה נמצא הכסף ש"על הרצפה" בעסק שלכם.</p>
+                <h2 data-lang-key="about_contact_h2">מוכנים להפסיק לבזבז זמן ולהתחיל לצמוח?</h2>
+                <p data-lang-key="about_contact_p">השלב הראשון הוא שיחת אבחון קצרה איתנו, ללא עלות וללא התחייבות. <br>בשיחה נבין יחד איפה נמצא הכסף ש"על הרצפה" בעסק שלכם.</p>
                 <form id="contact-form">
                     <div class="form-grid">
                         <div class="input-group">
-                            <input type="text" id="client-name" placeholder="שם מלא" required>
+                            <input type="text" id="client-name" placeholder="שם מלא" required data-lang-key="contact_form_name_placeholder" data-lang-attr="placeholder">
                         </div>
                         <div class="input-group">
-                            <input type="tel" id="client-phone" placeholder="מספר טלפון" required>
+                            <input type="tel" id="client-phone" placeholder="מספר טלפון" required data-lang-key="contact_form_phone_placeholder" data-lang-attr="placeholder">
                         </div>
                     </div>
                     <div class="marketing-consent">
                         <input type="checkbox" id="marketing-consent" name="marketing-consent" required>
-                        <label for="marketing-consent">אני מאשר/ת קבלת תוכן שיווקי והצעות מהחברה.</label>
+                        <label for="marketing-consent" data-lang-key="contact_form_consent">אני מאשר/ת קבלת תוכן שיווקי והצעות מהחברה.</label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-submit">כן, אני רוצה לקבוע שיחת אבחון חינם!</button>
+                    <button type="submit" class="btn btn-primary btn-submit" data-lang-key="about_contact_cta">כן, אני רוצה לקבוע שיחת אבחון חינם!</button>
                 </form>
-                <p style="font-size: 0.9rem; margin-top: 20px; color: var(--text-secondary);">נמאס לכם לחכות? קבעו פגישה ישירות ביומן שלנו.</p>
+                <p style="font-size: 0.9rem; margin-top: 20px; color: var(--text-secondary);" data-lang-key="wait_or_schedule">נמאס לכם לחכות? קבעו פגישה ישירות ביומן שלנו.</p>
             </div>
         </section>
     </main>
@@ -277,8 +285,8 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 AG Technology. כל הזכויות שמורות. </p> 
-                <p><a href="/about.html">אודות</a> | <a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
+                <p data-lang-key="footer_copyright">© 2025 AG Technology. כל הזכויות שמורות. </p> 
+                <p><a href="/about.html" data-lang-key="footer_about_link">אודות</a> | <a href="/privacy-policy.html" data-lang-key="footer_privacy">מדיניות פרטיות</a> | <a href="/cookie-policy.html" data-lang-key="footer_cookies">מדיניות עוגיות</a> | <a href="/accessibility-statement.html" data-lang-key="footer_accessibility">הצהרת נגישות</a></p>
             </div>
         </div>
     </footer>
@@ -287,8 +295,8 @@
         <div class="fireworks-container"></div>
         <div class="popup-content">
             <span class="close-popup">&times;</span>
-            <h2>תודה על פנייתך!</h2>
-            <p>ניצור איתך קשר ב-24 השעות הקרובות.</p>
+            <h2 data-lang-key="success_popup_title">תודה על פנייתך!</h2>
+            <p data-lang-key="success_popup_text">ניצור איתך קשר ב-24 השעות הקרובות.</p>
         </div>
     </div>
 
@@ -297,5 +305,6 @@
     <script src="about.js"></script>
     <script src="accessibility.js" ></script>
     <script type="module" src="cookie-consent.js"></script>
+    <script src="translation.js"></script>
 </body>
 </html>

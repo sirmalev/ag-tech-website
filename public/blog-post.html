@@ -18,17 +18,25 @@
 
     <header>
         <div class="container navbar">
+            <div class="language-switcher">
+                <span class="lang-option active" data-lang="he">עב</span>
+                <label class="switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-option" data-lang="en">EN</span>
+            </div>
             <a href="/index.html" class="logo"><img src="/assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/about.html">אודות</a></li>
-                    <li><a href="/index.html#process">התהליך שלנו</a></li>
-                    <li><a href="/index.html#calculator">מחשבון חיסכון</a></li>
-                    <li><a href="/blog">מאמרים</a></li>
-                    <li><a href="/index.html#contact">צור קשר</a></li>
+                    <li><a href="/about.html" data-lang-key="nav_about">אודות</a></li>
+                    <li><a href="/index.html#process" data-lang-key="nav_process">התהליך שלנו</a></li>
+                    <li><a href="/index.html#calculator" data-lang-key="nav_calculator">מחשבון חיסכון</a></li>
+                    <li><a href="/blog" data-lang-key="nav_articles">מאמרים</a></li>
+                    <li><a href="/index.html#contact" data-lang-key="nav_contact">צור קשר</a></li>
                 </ul>
             </nav>
-            <a href="/index.html#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+            <a href="/index.html#contact" class="btn btn-primary" data-lang-key="cta_button">קבעו פגישת אבחון</a>
         </div>
     </header>
 
@@ -41,8 +49,8 @@
                         <h1 class="blog-post-title">{{POST_TITLE}}</h1>
                         <div class="blog-post-meta">
                             <span class="category">{{POST_CATEGORY}}</span>
-                            <span class="author">מאת: {{POST_AUTHOR}}</span>
-                            <span class="date">{{POST_DATE}}</span>
+                            <span class="author" data-lang-key="blog_post_by">מאת: {{POST_AUTHOR}}</span>
+                            <span class="date">{{POST_DATE}}</span> 
                         </div>
                     </div>
                     <div class="blog-post-image">
@@ -63,10 +71,9 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 AG Technology. כל הזכויות שמורות. </p> 
-                <p><a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
-                <p><a href="/about.html">אודות</a></p>
-                
+                <p data-lang-key="footer_copyright">© 2025 AG Technology. כל הזכויות שמורות. </p>
+                <p><a href="/privacy-policy.html" data-lang-key="footer_privacy">מדיניות פרטיות</a> | <a href="/cookie-policy.html" data-lang-key="footer_cookies">מדיניות עוגיות</a> | <a href="/accessibility-statement.html" data-lang-key="footer_accessibility">הצהרת נגישות</a></p>
+                <p><a href="/about.html" data-lang-key="footer_about_link">אודות</a></p>
             </div>
         </div>
     </footer>
@@ -75,6 +82,7 @@
     <script src="/main.js"></script>
     <script src="/accessibility.js"></script>
     <script type="module" src="/cookie-consent.js"></script>
+    <script src="/translation.js"></script>
 
 </body>
 </html>

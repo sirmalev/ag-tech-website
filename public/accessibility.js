@@ -148,33 +148,33 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     const widgetHTML = `
-        <h3>תפריט נגישות</h3>
+        <h3 data-lang-key="acc_widget_title">תפריט נגישות</h3>
         <div class="accessibility-group">
-            <div class="group-title">תוכן</div>
+            <div class="group-title" data-lang-key="acc_group_content">תוכן</div>
             <div class="group-controls">
-                <button id="increase-text" class="accessibility-option-btn" aria-label="הגדל טקסט">הגדל טקסט</button>
-                <button id="decrease-text" class="accessibility-option-btn" aria-label="הקטן טקסט">הקטן טקסט</button>
-                <button id="readable-font" class="accessibility-option-btn" data-mode="readable-font">פונט קריא</button>
+                <button id="increase-text" class="accessibility-option-btn" data-lang-key="acc_increase_text_label" data-lang-attr="aria-label" aria-label="הגדל טקסט"><span data-lang-key="acc_increase_text">הגדל טקסט</span></button>
+                <button id="decrease-text" class="accessibility-option-btn" data-lang-key="acc_decrease_text_label" data-lang-attr="aria-label" aria-label="הקטן טקסט"><span data-lang-key="acc_decrease_text">הקטן טקסט</span></button>
+                <button id="readable-font" class="accessibility-option-btn" data-mode="readable-font" data-lang-key="acc_readable_font">פונט קריא</button>
             </div>
         </div>
         <div class="accessibility-group">
-            <div class="group-title">צבע וניגודיות</div>
+            <div class="group-title" data-lang-key="acc_group_color">צבע וניגודיות</div>
             <div class="group-controls">
-                <button id="high-contrast" class="accessibility-option-btn" data-mode="high-contrast">ניגודיות גבוהה</button>
-                <button id="negative-contrast" class="accessibility-option-btn" data-mode="negative-contrast">צבעים הפוכים</button>
-                <button id="grayscale" class="accessibility-option-btn" data-mode="grayscale">גווני אפור</button>
+                <button id="high-contrast" class="accessibility-option-btn" data-mode="high-contrast" data-lang-key="acc_high_contrast">ניגודיות גבוהה</button>
+                <button id="negative-contrast" class="accessibility-option-btn" data-mode="negative-contrast" data-lang-key="acc_negative_contrast">צבעים הפוכים</button>
+                <button id="grayscale" class="accessibility-option-btn" data-mode="grayscale" data-lang-key="acc_grayscale">גווני אפור</button>
             </div>
         </div>
         <div class="accessibility-group">
-            <div class="group-title">ניווט והדגשות</div>
+            <div class="group-title" data-lang-key="acc_group_nav">ניווט והדגשות</div>
             <div class="group-controls">
-                <button id="links-highlight" class="accessibility-option-btn" data-mode="links-highlight">הדגשת קישורים</button>
-                <button id="headings-highlight" class="accessibility-option-btn" data-mode="headings-highlight">הדגשת כותרות</button>
-                <button id="keyboard-navigation" class="accessibility-option-btn" data-mode="keyboard-navigation">ניווט מקלדת</button>
+                <button id="links-highlight" class="accessibility-option-btn" data-mode="links-highlight" data-lang-key="acc_links_highlight">הדגשת קישורים</button>
+                <button id="headings-highlight" class="accessibility-option-btn" data-mode="headings-highlight" data-lang-key="acc_headings_highlight">הדגשת כותרות</button>
+                <button id="keyboard-navigation" class="accessibility-option-btn" data-mode="keyboard-navigation" data-lang-key="acc_keyboard_nav">ניווט מקלדת</button>
             </div>
         </div>
         <div class="group-controls">
-             <button id="reset-accessibility-btn" class="accessibility-option-btn">אפס את כל ההגדרות</button>
+             <button id="reset-accessibility-btn" class="accessibility-option-btn" data-lang-key="acc_reset">אפס את כל ההגדרות</button>
         </div>
     `;
 
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     widgetRoot.innerHTML = `
         <div id="accessibility-menu">${widgetHTML}</div>
-        <button id="accessibility-btn" aria-label="פתח תפריט נגישות">
+        <button id="accessibility-btn" aria-label="פתח תפריט נגישות" data-lang-key="acc_btn_label" data-lang-attr="aria-label">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></svg>
         </button>
     `;

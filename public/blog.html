@@ -27,17 +27,25 @@
 
     <header>
         <div class="container navbar">
+            <div class="language-switcher">
+                <span class="lang-option active" data-lang="he">עב</span>
+                <label class="switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-option" data-lang="en">EN</span>
+            </div>
             <a href="/index.html" class="logo"><img src="/assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/about.html">אודות</a></li>
-                    <li><a href="/index.html#process">התהליך שלנו</a></li>
-                    <li><a href="/index.html#calculator">מחשבון חיסכון</a></li>
-                    <li><a href="/blog">מאמרים</a></li>
-                    <li><a href="/index.html#contact">צור קשר</a></li>
+                    <li><a href="/about.html" data-lang-key="nav_about">אודות</a></li>
+                    <li><a href="/index.html#process" data-lang-key="nav_process">התהליך שלנו</a></li>
+                    <li><a href="/index.html#calculator" data-lang-key="nav_calculator">מחשבון חיסכון</a></li>
+                    <li><a href="/blog" data-lang-key="nav_articles">מאמרים</a></li>
+                    <li><a href="/index.html#contact" data-lang-key="nav_contact">צור קשר</a></li>
                 </ul>
             </nav>
-            <a href="/index.html#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+            <a href="/index.html#contact" class="btn btn-primary" data-lang-key="cta_button">קבעו פגישת אבחון</a>
         </div>
     </header>
 
@@ -46,33 +54,33 @@
             <div class="container">
                 <div class="blog-page-header">
                     <div class="container">
-                        <h1>מרכז הידע שלנו.</h1>
-                        <p>מאמרים ועדכונים על טכנולוגיה, AI ועסקים</p>
+                        <h1 data-lang-key="blog_main_title">מרכז הידע שלנו.</h1>
+                        <p data-lang-key="blog_subtitle">מאמרים ועדכונים על טכנולוגיה, AI ועסקים</p>
                     </div>
                 </div>
 
                 <div class="blog-filters">
                     <div class="filter-group">
-                        <label for="category-filter">קטגוריה:</label>
+                        <label for="category-filter" data-lang-key="blog_filter_category">קטגוריה:</label>
                         <select id="category-filter">
-                            <option value="all">הכל</option>
+                            <option value="all" data-lang-key="blog_filter_all">הכל</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label for="author-filter">מחבר:</label>
+                        <label for="author-filter" data-lang-key="blog_filter_author">מחבר:</label>
                         <select id="author-filter">
-                            <option value="all">הכל</option>
+                            <option value="all" data-lang-key="blog_filter_all">הכל</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label for="date-sort">סדר לפי תאריך:</label>
+                        <label for="date-sort" data-lang-key="blog_filter_sort">סדר לפי תאריך:</label>
                         <select id="date-sort">
-                            <option value="newest">מהחדש לישן</option>
-                            <option value="oldest">מהישן לחדש</option>
+                            <option value="newest" data-lang-key="blog_sort_newest">מהחדש לישן</option>
+                            <option value="oldest" data-lang-key="blog_sort_oldest">מהישן לחדש</option>
                         </select>
                     </div>
                     <div class="post-count">
-                        <span>סה"כ מאמרים: <span id="post-count-number">0</span></span>
+                        <span data-lang-key="blog_total_posts">סה"כ מאמרים:</span> <span id="post-count-number">0</span>
                     </div>
                 </div>
                 
@@ -86,9 +94,9 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 AG Technology. כל הזכויות שמורות. </p>
-                <p><a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
-                <p><a href="/about.html">אודות</a></p>
+                <p data-lang-key="footer_copyright">© 2025 AG Technology. כל הזכויות שמורות. </p>
+                <p><a href="/privacy-policy.html" data-lang-key="footer_privacy">מדיניות פרטיות</a> | <a href="/cookie-policy.html" data-lang-key="footer_cookies">מדיניות עוגיות</a> | <a href="/accessibility-statement.html" data-lang-key="footer_accessibility">הצהרת נגישות</a></p>
+                <p><a href="/about.html" data-lang-key="footer_about_link">אודות</a></p>
             </div>
         </div>
     </footer>
@@ -97,5 +105,6 @@
     <script src="/main.js"></script>
     <script src="/accessibility.js"></script>
     <script type="module" src="/cookie-consent.js"></script>
+    <script src="/translation.js"></script>
 </body>
 </html>

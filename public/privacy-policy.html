@@ -16,65 +16,73 @@
 <body>
     <header>
         <div class="container navbar">
+            <div class="language-switcher">
+                <span class="lang-option active" data-lang="he">עב</span>
+                <label class="switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="lang-option" data-lang="en">EN</span>
+            </div>
             <a href="/index.html" class="logo"><img src="/assets/logo.png" alt="AG Technology Logo" class="logo-img"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/about.html">אודות</a></li>
-                    <li><a href="/index.html#process">התהליך שלנו</a></li>
-                    <li><a href="/blog">מאמרים</a></li>
-                    <li><a href="/index.html#contact">צור קשר</a></li>
+                    <li><a href="/about.html" data-lang-key="nav_about">אודות</a></li>
+                    <li><a href="/index.html#process" data-lang-key="nav_process">התהליך שלנו</a></li>
+                    <li><a href="/blog" data-lang-key="nav_articles">מאמרים</a></li>
+                    <li><a href="/index.html#contact" data-lang-key="nav_contact">צור קשר</a></li>
                 </ul>
             </nav>
-            <a href="/index.html#contact" class="btn btn-primary">קבעו פגישת אבחון</a>
+            <a href="/index.html#contact" class="btn btn-primary" data-lang-key="cta_button">קבעו פגישת אבחון</a>
         </div>
     </header>
 
     <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
-        <h1>מדיניות פרטיות</h1>
-        <p><em>תאריך עדכון אחרון: 29 באוגוסט 2025</em></p>
+        <h1 data-lang-key="privacy_title">מדיניות פרטיות</h1>
+        <p data-lang-key="privacy_last_updated"><em>תאריך עדכון אחרון: 29 באוגוסט 2025</em></p>
 
-        <h2>מבוא</h2>
-        <p>
+        <h2 data-lang-key="privacy_intro_h2">מבוא</h2>
+        <p data-lang-key="privacy_intro_p">
             ברוכים הבאים ל-AG Technology. אנו מחויבים להגן על פרטיותך. מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים, חושפים ומגנים על המידע שלך כאשר אתה מבקר באתר האינטרנט שלנו. אנא קרא מדיניות פרטיות זו בעיון. אם אינך מסכים לתנאי מדיניות פרטיות זו, אנא אל תיגש לאתר.
         </p>
 
-        <h2>איסוף המידע שלך</h2>
-        <p>
+        <h2 data-lang-key="privacy_collection_h2">איסוף המידע שלך</h2>
+        <p data-lang-key="privacy_collection_p">
             אנו עשויים לאסוף מידע אודותיך במגוון דרכים. המידע שאנו עשויים לאסוף באתר כולל:
         </p>
         <ul>
             <li>
-                <strong>מידע אישי:</strong> מידע המאפשר זיהוי אישי, כגון שמך, כתובת הדוא"ל ומספר הטלפון שלך, שאתה מספק לנו מרצונך בעת יצירת קשר דרך האתר.
+                <strong data-lang-key="privacy_collection_li1_strong">מידע אישי:</strong><span data-lang-key="privacy_collection_li1_text"> מידע המאפשר זיהוי אישי, כגון שמך, כתובת הדוא"ל ומספר הטלפון שלך, שאתה מספק לנו מרצונך בעת יצירת קשר דרך האתר.</span>
             </li>
             <li>
-                <strong>נתוני שימוש:</strong> מידע שהדפדפן שלך שולח באופן אוטומטי בכל פעם שאתה מבקר באתר, כגון כתובת ה-IP שלך, סוג הדפדפן, ספק שירותי האינטרנט, דפי הפניה/יציאה, חותמות זמן ועוד.
+                <strong data-lang-key="privacy_collection_li2_strong">נתוני שימוש:</strong><span data-lang-key="privacy_collection_li2_text"> מידע שהדפדפן שלך שולח באופן אוטומטי בכל פעם שאתה מבקר באתר, כגון כתובת ה-IP שלך, סוג הדפדפן, ספק שירותי האינטרנט, דפי הפניה/יציאה, חותמות זמן ועוד.</span>
             </li>
             <li>
-                <strong>נתוני עוגיות:</strong> אנו משתמשים בעוגיות כדי לעקוב אחר הפעילות באתר שלנו ולאחסן מידע מסוים. אתה יכול להורות לדפדפן שלך לסרב לכל העוגיות או לציין מתי נשלחת עוגייה. עם זאת, אם אינך מקבל עוגיות, ייתכן שלא תוכל להשתמש בחלקים מסוימים של השירות שלנו.
+                <strong data-lang-key="privacy_collection_li3_strong">נתוני עוגיות:</strong><span data-lang-key="privacy_collection_li3_text"> אנו משתמשים בעוגיות כדי לעקוב אחר הפעילות באתר שלנו ולאחסן מידע מסוים. אתה יכול להורות לדפדפן שלך לסרב לכל העוגיות או לציין מתי נשלחת עוגייה. עם זאת, אם אינך מקבל עוגיות, ייתכן שלא תוכל להשתמש בחלקים מסוימים של השירות שלנו.</span>
             </li>
         </ul>
 
-        <h2>שימוש במידע שלך</h2>
-        <p>
+        <h2 data-lang-key="privacy_usage_h2">שימוש במידע שלך</h2>
+        <p data-lang-key="privacy_usage_p">
             אנו משתמשים במידע שאנו אוספים כדי:
         </p>
         <ul>
-            <li>לספק, לתפעל ולתחזק את האתר שלנו</li>
-            <li>לשפר, להתאים אישית ולהרחיב את האתר שלנו</li>
-            <li>להבין ולנתח כיצד אתה משתמש באתר שלנו</li>
-            <li>לפתח מוצרים, שירותים, תכונות ופונקציונליות חדשים</li>
-            <li>לתקשר איתך, בין אם ישירות ובין אם באמצעות אחד השותפים שלנו, כולל שירות לקוחות, כדי לספק לך עדכונים ומידע אחר הנוגע לאתר, ולמטרות שיווק וקידום מכירות</li>
-            <li>לשלוח לך הודעות דוא"ל</li>
-            <li>למצוא ולמנוע הונאות</li>
+            <li data-lang-key="privacy_usage_li1">לספק, לתפעל ולתחזק את האתר שלנו</li>
+            <li data-lang-key="privacy_usage_li2">לשפר, להתאים אישית ולהרחיב את האתר שלנו</li>
+            <li data-lang-key="privacy_usage_li3">להבין ולנתח כיצד אתה משתמש באתר שלנו</li>
+            <li data-lang-key="privacy_usage_li4">לפתח מוצרים, שירותים, תכונות ופונקציונליות חדשים</li>
+            <li data-lang-key="privacy_usage_li5">לתקשר איתך, בין אם ישירות ובין אם באמצעות אחד השותפים שלנו, כולל שירות לקוחות, כדי לספק לך עדכונים ומידע אחר הנוגע לאתר, ולמטרות שיווק וקידום מכירות</li>
+            <li data-lang-key="privacy_usage_li6">לשלוח לך הודעות דוא"ל</li>
+            <li data-lang-key="privacy_usage_li7">למצוא ולמנוע הונאות</li>
         </ul>
 
-        <h2>אבטחת המידע שלך</h2>
-        <p>
+        <h2 data-lang-key="privacy_security_h2">אבטחת המידע שלך</h2>
+        <p data-lang-key="privacy_security_p">
             אנו משתמשים באמצעי אבטחה אדמיניסטרטיביים, טכניים ופיזיים כדי לסייע בהגנה על המידע האישי שלך. בעוד שנקטנו בצעדים סבירים לאבטחת המידע האישי שאתה מספק לנו, אנא שים לב כי למרות מאמצינו, שום אמצעי אבטחה אינו מושלם או בלתי חדיר, ושום שיטת העברת נתונים אינה יכולה להבטיח מפני כל יירוט או שימוש לרעה אחר.
         </p>
 
-        <h2>יצירת קשר</h2>
-        <p>
+        <h2 data-lang-key="privacy_contact_h2">יצירת קשר</h2>
+        <p data-lang-key="privacy_contact_p">
             אם יש לך שאלות או הערות לגבי מדיניות פרטיות זו, אנא צור איתנו קשר בכתובת: info.about.help@gmail.com
         </p>
     </main>
@@ -82,8 +90,8 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 AG Technology. כל הזכויות שמורות.</p>
-                <p><a href="/about.html">אודות</a> | <a href="/privacy-policy.html">מדיניות פרטיות</a> | <a href="/cookie-policy.html">מדיניות עוגיות</a> | <a href="/accessibility-statement.html">הצהרת נגישות</a></p>
+                <p data-lang-key="footer_copyright">© 2025 AG Technology. כל הזכויות שמורות.</p>
+                <p><a href="/about.html" data-lang-key="footer_about_link">אודות</a> | <a href="/privacy-policy.html" data-lang-key="footer_privacy">מדיניות פרטיות</a> | <a href="/cookie-policy.html" data-lang-key="footer_cookies">מדיניות עוגיות</a> | <a href="/accessibility-statement.html" data-lang-key="footer_accessibility">הצהרת נגישות</a></p>
             </div>
         </div>
     </footer>
@@ -91,5 +99,6 @@
     <script src="main.js"></script>
     <script src="accessibility.js"></script>
     <script type="module" src="cookie-consent.js"></script>
+    <script src="translation.js"></script>
 </body>
 </html>
