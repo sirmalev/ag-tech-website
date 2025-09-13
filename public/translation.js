@@ -404,20 +404,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const en_option = document.querySelector('.lang-option[data-lang="en"]');
 
     const applyTranslations = (lang) => {
+        // Assuming the site is always initially rendered in Hebrew.
+        // This helps us understand the structure of the original text.
+        const sourceLang = 'he';
+
         document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.dataset.langKey;
             const attr = el.dataset.langAttr;
 
             if (translations[lang] && translations[lang][key]) {
                 let translation = translations[lang][key];
+                const sourceTranslation = translations[sourceLang]?.[key];
 
-                // Handle placeholders like {{POST_AUTHOR}}
-                if (el.innerHTML.includes('{{')) {
-                    const matches = el.innerHTML.match(/{{(.*?)}}/);
-                    if (matches) {
-                        const placeholder = matches[0];
-                        const placeholderKey = matches[1];
-                        translation = translation.replace(`{{${placeholderKey}}}`, placeholder);
+                // New logic to handle dynamic content (placeholders).
+                // This checks if the original translation string (in Hebrew) contains a placeholder.
+                if (sourceTranslation && sourceTranslation.includes('{{')) {
+                    const placeholderMatch = sourceTranslation.match(/{{(.*?)}}/);
+                    if (placeholderMatch) {
+                        const placeholderWithBraces = placeholderMatch[0]; // e.g., '{{POST_AUTHOR}}'
+                        const [prefix, suffix] = sourceTranslation.split(placeholderWithBraces);
+
+                        // Extract the dynamic content from the current element's HTML.
+                        // This works whether the content is already rendered (e.g., "Alon M.") or is still a placeholder.
+                        let dynamicContent = el.innerHTML.trim();
+                        if (dynamicContent.startsWith(prefix)) {
+                            dynamicContent = dynamicContent.substring(prefix.length);
+                        }
+                        if (suffix && dynamicContent.endsWith(suffix)) {
+                            dynamicContent = dynamicContent.substring(0, dynamicContent.length - suffix.length);
+                        }
+
+                        // Re-inject the dynamic content into the new translated string.
+                        translation = translation.replace(placeholderWithBraces, dynamicContent.trim());
                     }
                 }
 

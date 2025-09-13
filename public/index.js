@@ -248,14 +248,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             isSubmitting = true;
 
-            const phoneRegex = /^\d{10}$/;
+            // const phoneRegex = /^\d{10}$/;
 
-            if (!phoneRegex.test(phone)) {
-                alert('מספר הטלפון אינו תקין. הוא חייב להכיל 10 ספרות בלבד, ללא רווחים או תווים אחרים.');
-                isSubmitting = false;
-                return; // עצירת שליחת הטופס
+            // if (!phoneRegex.test(phone)) {
+            //     alert('מספר הטלפון אינו תקין. הוא חייב להכיל 10 ספרות בלבד, ללא רווחים או תווים אחרים.');
+            //     isSubmitting = false;
+            //     return; // עצירת שליחת הטופס
                 
-            }
+            // }
 
             if (phone.startsWith('0')) {
                 phone = phone.substring(1);
