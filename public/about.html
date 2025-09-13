@@ -99,6 +99,68 @@
         #contact-form .form-grid {
             grid-template-columns: 1fr;
         }
+
+        /* --- Loader Styles for Submit Button --- */
+        .btn-submit {
+            position: relative;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 54px; /* Prevents button from changing size */
+        }
+
+        .btn-submit .btn-text {
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .btn-submit.loading .btn-text {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .btn-submit .loader-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .btn-submit.loading .loader-wrapper {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .ai-loader {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            animation: ai-loader-rotate 2.5s linear infinite;
+        }
+
+        .ai-loader-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            animation: ai-loader-orbit 2.5s ease-in-out infinite;
+        }
+
+        .ai-loader-dot:nth-child(1) { top: 0; left: 0; }
+        .ai-loader-dot:nth-child(2) { top: 0; right: 0; animation-delay: 0.625s; }
+        .ai-loader-dot:nth-child(3) { bottom: 0; right: 0; animation-delay: 1.25s; }
+        .ai-loader-dot:nth-child(4) { bottom: 0; left: 0; animation-delay: 1.875s; }
+
+        @keyframes ai-loader-rotate { 100% { transform: rotate(360deg); } }
+        @keyframes ai-loader-orbit {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(0.4); opacity: 0.6; }
+        }
     </style>
 </head>
 <body>
@@ -349,7 +411,17 @@
                         <input type="checkbox" id="marketing-consent" name="marketing-consent" required>
                         <label for="marketing-consent" data-lang-key="contact_form_consent">אני מאשר/ת קבלת תוכן שיווקי והצעות מהחברה.</label>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-submit" data-lang-key="about_contact_cta">כן, אני רוצה לקבוע שיחת אבחון חינם!</button>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span class="btn-text" data-lang-key="about_contact_cta">כן, אני רוצה לקבוע שיחת אבחון חינם!</span>
+                        <div class="loader-wrapper">
+                            <div class="ai-loader">
+                                <div class="ai-loader-dot"></div>
+                                <div class="ai-loader-dot"></div>
+                                <div class="ai-loader-dot"></div>
+                                <div class="ai-loader-dot"></div>
+                            </div>
+                        </div>
+                    </button>
                 </form>
                 <p style="font-size: 0.9rem; margin-top: 20px; color: var(--text-secondary);" data-lang-key="wait_or_schedule">נמאס לכם לחכות? קבעו פגישה ישירות ביומן שלנו.</p>
             </div>
@@ -403,6 +475,40 @@
                     // Initial update for pre-filled values or default state
                     updateHiddenPhone();
                 }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // This is a demonstration. In a real app, the form submission
+                    // would be handled via an AJAX request (e.g., fetch).
+                    e.preventDefault(); 
+
+                    const submitBtn = contactForm.querySelector('.btn-submit');
+                    if (submitBtn) {
+                        submitBtn.classList.add('loading');
+                        submitBtn.disabled = true;
+                    }
+
+                    // Simulate a 2.5-second network delay for sending the form.
+                    // In a real app, you would replace this with your fetch() call.
+                    // The code to hide the loader and show the popup would go in
+                    // the .then() or .finally() block of your request.
+                    setTimeout(() => {
+                        if (submitBtn) {
+                            submitBtn.classList.remove('loading');
+                            submitBtn.disabled = false;
+                        }
+                        
+                        const successPopup = document.getElementById('success-popup');
+                        if (successPopup) {
+                            successPopup.style.display = 'flex'; 
+                        }
+                    }, 2500);
+                });
             }
         });
     </script>
