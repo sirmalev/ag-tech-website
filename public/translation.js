@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'nav_calculator': 'Savings Calculator',
             'nav_articles': 'Articles',
             'nav_contact': 'Contact Us',
-            'cta_button': 'Schedule a Diagnosis',
+            'cta_button': 'Schedule Meeting',
             'footer_copyright': '© 2025 AG Technology. All rights reserved.',
             'footer_privacy': 'Privacy Policy',
             'footer_cookies': 'Cookie Policy',
