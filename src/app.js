@@ -29,26 +29,27 @@ app.use(express.json());
 // Middleware שמגדיר את תיקיית 'public' כתיקייה סטטית.
 // Express יגיש אוטומטית קבצים מתיקייה זו (כמו index.html, style.css)
 // path.join(__dirname, '..', 'public') בונה את הנתיב המלא לתיקיית public
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public/pages')));
+app.use('/assets', express.static(path.join(__dirname, '..', 'public/assets')));
 
 // Serve login.html for the /login route
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'login.html'));
+    res.sendFile(path.join(__dirname, '..', 'public/pages', 'login.html'));
 });
 
 // Serve dashboard.html for the /dashboard route (protected)
 app.get('/dashboard', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'dashboard.html'));
+    res.sendFile(path.join(__dirname, '..', 'public/pages', 'dashboard.html'));
 });
 
 // Serve privacy-policy.html for the /privacy-policy route
 app.get('/privacy-policy.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'privacy-policy.html'));
+    res.sendFile(path.join(__dirname, '..', 'public/pages', 'privacy-policy.html'));
 });
 
 // Serve cookie-policy.html for the /cookie-policy route
 app.get('/cookie-policy.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'cookie-policy.html'));
+    res.sendFile(path.join(__dirname, '..', 'public/pages', 'cookie-policy.html'));
 });
 
 
