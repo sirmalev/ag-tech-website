@@ -43,7 +43,7 @@ const blogPosts = loadBlogPosts();
 
 // נתיב עבור עמוד הבלוג הראשי
 router.get('/blog', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public', 'blog.html'));
+    res.sendFile(path.join(__dirname, '../../public/pages', 'blog.html'));
 });
 
 // נתיב API שמחזיר את רשימת המאמרים עבור עמוד הבלוג הראשי
