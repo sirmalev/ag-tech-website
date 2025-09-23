@@ -102,7 +102,7 @@ router.get('/blog/:slug', (req, res) => {
     const postIndex = blogPosts.findIndex(p => p.slug === postSlug);
 
     if (post) {
-        const templatePath = path.join(__dirname, '../../public', 'blog-post.html');
+        const templatePath = path.join(__dirname, '../../public/pages', 'blog-post.html');
         fs.readFile(templatePath, 'utf8', (err, template) => {
             if (err) {
                 console.error("שגיאה בקריאת תבנית המאמר:", err);
