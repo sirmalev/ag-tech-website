@@ -7,7 +7,7 @@ const path = require('path');
 const BASE_URL = 'https://www.aloutomation.guru';
 
 // נתיב לתיקייה שמכילה את קבצי המאמרים
-const postsDirectory = path.join(__dirname, '../../public', 'posts');
+const postsDirectory = path.join(__dirname, '../../public/pages', 'posts');
 
 // פונקציה לטעינת המאמרים מהקבצים
 const loadBlogPosts = () => {
